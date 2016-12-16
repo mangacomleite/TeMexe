@@ -14,12 +14,12 @@ module.exports = function(app) {
     var connection = app.infra.connectionFactory();
 
 
-    fs.readFile( request.files.image.path, function ( err, data ) {
+    fs.readFile( request.files.name.path, function ( err, data ) {
 
-      let extension;
-      if ( request.files.image.type == 'image/png' ) {
+      let extension = 'jpg';
+      if ( request.files.name.type == 'image/png' ) {
         extension = 'png';
-      } else if ( request.files.image.type == 'image/jpeg' ) {
+      } else if ( request.files.name.type == 'image/jpeg' ) {
         extension = 'jpg';
       }
 
