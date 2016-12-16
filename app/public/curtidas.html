@@ -46,9 +46,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left mainNavbar">
-                    <li class="sliding-middle-out slidingActive"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
-                    <li class="sliding-middle-out"><a href="profile.html"><i class="fa fa-user"></i> Perfil</a></li>
-                    <li class="sliding-middle-out"><a href="curtidas.html"><i class="fa fa-hand-o-up"></i> Curtidas</a></li>
+                    <li class="sliding-middle-out"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
+                    <li class="sliding-middle-out"><a href="profile.html"><i class="fa fa-user"></i> Profile</a></li>
+                    <li class="sliding-middle-out slidingActive"><a href="curtidas.html"><i class="fa fa-hand-o-up"></i> Curtidas</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="sliding-middle-out"><a href=""><i class="fa fa-bell-o"></i></a></li>
@@ -73,15 +73,13 @@
                         </ul>
                     </li>
                     <li>
-                        <button type="button" class="btn new-complaint btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                            <span>Reclamação</span>
-                        </button>
+                        <a class="btn btn-orange" href="#">
+                            <i class="fa fa-plus fa-lg"></i> Reclamação</a>
                     </li>
                     <li class="dropdown fontCursive">
                         <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a> -->
                         <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="img/paulo.jpg"></a>
-
+                        
                         <ul id="login-dp" class="dropdown-menu dropdownUser">
                             <div class="arrow-up"></div>
                             <li><a href="#"><i class="fa fa-users"></i> My Accounts</a></li>
@@ -101,56 +99,6 @@
         <!-- /.container -->
     </nav>
 
-    <!-- New Complaint Modal -->
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Nova Reclamação</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="/problemas" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="description">Descrição:</label>
-                            <input type="text" name="description" class="form-control" id="description">
-                        </div>
-                        <div class="form-group">
-                            <div class="container">
-                                <div class="row">
-                                    <label for="image" class="title">Imagem:</label>
-                                    <div class="col-md-12">
-                                        <!-- image-preview-filename input [CUT FROM HERE]-->
-                                        <div class="input-group image-preview">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                            <span class="input-group-btn">
-                                                <!-- image-preview-clear button -->
-                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                    <span class="glyphicon glyphicon-remove"></span> Clear
-                                                </button>
-                                                <!-- image-preview-input -->
-                                                <div class="btn btn-default image-preview-input">
-                                                    <span class="glyphicon glyphicon-folder-open"></span>
-                                                    <span class="image-preview-input-title">Browse</span>
-                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="input-file-preview"/> <!-- rename it -->
-                                                </div>
-                                            </span>
-                                        </div><!-- /input-group image-preview [TO HERE]-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Full Width Image Header -->
     <header class="header-feed" id="top">
         <div class="bannerFeed">
@@ -159,7 +107,7 @@
                     <img class="picview-image img-circle img-responsive" src="img/logoNew.png">
                     te<span class="redStk">Mexe</span>!
                 </h1>
-            </div>
+            </div>    
         </div>
     </header>
 
@@ -210,6 +158,12 @@
                         <div class="socialMediaBanner miniInfoUser">
                             <a href="#">
                                 <div>
+                                    <i><img src="img/miniCone.png"></i>
+                                    <span>50</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div>
                                     <i class="fa fa-twitter-square"></i>
                                     <span>5</span>
                                 </div>
@@ -217,114 +171,54 @@
                             <a href="#">
                                 <div>
                                     <i class="fa fa-instagram"></i>
-                                    <span>287</span>
+                                    <span>11</span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-facebook-square"></i>
-                                    <span>234</span>
+                                    <span>178</span>
                                 </div>
                             </a>
                         </div>
-
-                    </div>
-                </div>
-
-                <!-- Stalking -->
-                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
-
-                    <!-- Stalking Users -->
-                    <div class="userPost">
-                        <span class="number">
-                            <a href="#" class="fontCursive">2/4</a>
-                        </span>
-                        <a class="userImgName">
-                            <i class="fa fa-star-o"></i> Viewing
-                        </a>
-                        <hr>
-                        <div class="stalkingContent">
-                            <!-- User -->
-                            <div class="userStalking">
-                                <a href="" class="generalInfoStalking">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> Paulo Virote</span>
-                                </a>
-                                <a href="" class="deleteStalking"><i class="fa fa-times"></i></a>
-                                <i class="fa fa-twitter tw"></i>
-                                <i class="fa fa-facebook fb"></i>
-                                <i class="fa fa-instagram"></i>
-                            </div>
-                            <!-- User -->
-                            <div class="userStalking">
-                                <a href="" class="generalInfoStalking">
-                                    <img src="img/gabriela.jpg" class="">
-                                    <span> Gabriela Gelb</span>
-                                </a>
-                                <a href="" class="deleteStalking"><i class="fa fa-times"></i></a> <!-- &#9587; -->
-                                <i class="fa fa-twitter tw"></i>
-                                <i class="fa fa-facebook fb"></i>
-                                <i class="fa fa-instagram"></i>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <!-- Full List -->
                 <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
-
-                    <!-- Stalking Users -->
+                    
+                    <!-- Opcoes -->
                     <div class="userPost">
                         <span class="number">
-                            <a href="#" class="fontCursive">4</a>
+                            <a href="#" class="fontCursive">3/4</a>
                         </span>
                         <a class="userImgName">
-                            <i class="fa fa-heart-o"></i> Stalking
+                            <i class="fa fa-heart-o"></i> Filtro
                         </a>
                         <hr>
                         <div class="stalkingContent">
-                            <!-- User -->
+                            <!-- Social -->
                             <div class="userStalking">
-                                <a href="" class="generalInfoStalking">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> Paulo Virote</span>
-                                </a>
                                 <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <i class="fa fa-twitter tw"></i>
-                                <i class="fa fa-facebook fb"></i>
-                                <i class="fa fa-instagram"></i>
+                                <span class="tm">teMexe!</span> <img src="img/miniCone.png">
                             </div>
-                            <!-- User -->
+                            <!-- Social -->
                             <div class="userStalking">
-                                <a href="" class="generalInfoStalking">
-                                    <img src="img/gabriela.jpg" class="">
-                                    <span> Gabriela Gelb</span>
-                                </a>
                                 <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <i class="fa fa-twitter tw"></i>
-                                <i class="fa fa-facebook fb"></i>
-                                <i class="fa fa-instagram"></i>
+                                <span class="fb">Facebook</span> <i class="fa fa-facebook fb"></i>
                             </div>
-                            <!-- User -->
+                            <!-- Social -->
                             <div class="userStalking">
-                                <a href="" class="generalInfoStalking">
-                                    <img src="img/cleber.jpg" class="">
-                                    <span> Cleber Quadros</span>
-                                </a>
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                <i class="fa fa-facebook fb"></i>
-                                <i class="fa fa-instagram"></i>
+                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
+                                <span class="it">Instagram</span> <i class="fa fa-instagram it"></i>
                             </div>
-                            <!-- User -->
+                            <!-- Social -->
                             <div class="userStalking">
-                                <a href="" class="generalInfoStalking">
-                                    <img src="img/ivo.jpg" class="">
-                                    <span> Ivo Berbigier</span>
-                                </a>
                                 <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                <i class="fa fa-facebook fb"></i>
-                                <i class="fa fa-instagram"></i>
+                                <span class="tw">Twitter</span> <i class="fa fa-twitter tw"></i>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -454,6 +348,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        
+
                         <!-- END -->
 
                     </div> <!-- /grid -->
@@ -467,7 +364,7 @@
 
     <div class="container">
         <!-- <hr class="picview-divider"> -->
-
+        
         <!-- Footer -->
         <footer>
             <div class="row">

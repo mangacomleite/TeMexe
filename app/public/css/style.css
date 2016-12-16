@@ -50,7 +50,7 @@ body {
 
 
 .redStk{
-    color: #ff6061 !important;
+    color: #ff8800 !important;
 }
 
 .headline {
@@ -130,7 +130,7 @@ body {
 }
 
 .socialMediaBanner a:hover i{
-    color: #f58080;
+    color: #ff8800;
 }
 
 .socialMediaBanner a div{
@@ -141,6 +141,10 @@ body {
 .socialMediaBanner a div i{
     font-size: 30px;
     display: block;
+}
+
+.socialMediaBanner a div i img{
+    height: 25px;
 }
 
 .socialMediaBanner a div span{
@@ -386,7 +390,7 @@ footer {
 .navbarMedia li a:hover, .navbarMedia li a:focus, .navbarMedia li a:active{
     background-color: transparent !important;
     /*text-shadow: none;*/
-    /*color: #dc4a4c !important;*/
+    /*color: #d35400 !important;*/
 }
 
 .centeredNav {
@@ -422,13 +426,13 @@ footer {
     margin-top: 5px;
     /*width: 250px;*/
     border-radius: 5px;
-    border:2px solid #f58080;
+    border:2px solid #ff8800;
     transition: all .2s ease-in-out;
 }
 
 
 .btn1{
-    background-color: #f58080;
+    background-color: #ff8800;
 }
 .btn2{
     background-color: transparent;
@@ -439,8 +443,8 @@ footer {
 }
 
 .btn-banner:hover{
-    border:2px solid #ff6566;
-    background-color: #ff6566;
+    border:2px solid #d87300;
+    background-color: #d87300;
     text-shadow: none;
     color: #fff;
 }
@@ -476,7 +480,7 @@ footer {
     height: 96px;
     line-height: 96px;
     margin: 0 auto 10px;
-    color: #dc4a4c;
+    color: #d35400;
     border: solid 1px transparent;
     text-align: center;
     background-color: inherit;
@@ -485,8 +489,8 @@ footer {
 
 .feature:hover .icon{
     color: #fff;
-    border: solid 1px #dc4a4c;
-    background-color: #dc4a4c !important;
+    border: solid 1px #d35400;
+    background-color: #d35400 !important;
 }
 
 .feature p{
@@ -562,7 +566,7 @@ footer {
 }
 
 .redViz{
-    color: #dc4a4c;
+    color: #d35400;
 }
 
 .marginTop{
@@ -690,7 +694,7 @@ footer {
 
 .sliding-middle-out:hover:after {
     width: 100%;
-    background: #dc4a4c;
+    background: #d35400;
 }
 
 .slidingActive:after {
@@ -700,7 +704,7 @@ footer {
     margin-top: -5px;
     height: 5px;
     width: 100%;
-    background: #f58080;
+    background: #ff8800;
     transition: width .3s ease, background-color .3s ease;
 }
 
@@ -722,12 +726,12 @@ footer {
 
 .userInfo .userImg {
     width: 100%;
-    color: #dc4a4c;
+    color: #d35400;
 
 }
 
 .userInfo:hover .userImgWrapper{
-    /*border: solid 5px #dc4a4c;*/
+    /*border: solid 5px #d35400;*/
     /*box-shadow: 0px 0px 15px #080808;*/
 }
 
@@ -808,12 +812,12 @@ footer {
 .input-search-top span button{
     background: transparent;
     border:none;
-    color: #ff6566;
+    color: #d87300;
     transition: all .2s ease-in-out;
 }
 
 .input-search-top span button:hover{
-    background-color: #ff6566;
+    background-color: #d87300;
 }
 
 .input-search-top input{
@@ -913,7 +917,7 @@ footer {
 .dropdownResults .loading{
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #dc4a4c;
+    color: #d35400;
 }
 
 .dropdownUser li a, .dropdownResults li a{
@@ -932,7 +936,7 @@ footer {
 
 .dropdownUser li a i{
     width: 25px;
-    color: #dc4a4c !important;
+    color: #d35400 !important;
 }
 
 .arrow-up {
@@ -1002,6 +1006,8 @@ footer {
     padding-top: 30px;
 }
 
+
+
 .containerFeed div.userPost span.socialInfo{
     position: absolute;
     right: 20px;
@@ -1009,6 +1015,9 @@ footer {
     /*margin-right: 10px;*/
     /*margin-top: 10px;*/
     font-size: 20px;
+}
+.containerFeed div.userPost span.socialInfo img{
+    height: 20px;
 }
 
 .containerFeed div.userPost span.number{
@@ -1023,11 +1032,11 @@ footer {
 .containerFeed div.userPost a{
     cursor: pointer;
     text-decoration: none;
-    color: #dc4a4c;
+    color: #d35400;
     transition:all .2s ease-in-out;
 }
 .containerFeed div.userPost a:hover{
-    color: #ff6566;
+    color: #d87300;
 }
 
 .containerFeed div.userPost a.userImgName{
@@ -1070,6 +1079,10 @@ footer {
 
 .fb{
     color: #3b5998;
+}
+
+.tm{
+    color: #d87300;
 }
 
 .tw{
@@ -1165,10 +1178,13 @@ footer {
 .stalkingContent div a.deleteStalking{
     position: absolute;
     right: 30px;
-    margin-top: 3px;
     /*top: 5px;*/
 }
 
 .stalkingContent div a.deleteStalking .fa-check{
     color: #27ae60 !important;
+}
+
+.stalkingContent .userStalking img{
+    height: 16px;
 }
