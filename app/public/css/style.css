@@ -73,8 +73,8 @@ body {
     font-size: 40px;
     /*background: #fff;*/
     /*background: rgba(255,255,255,0.9);*/
-    
-    
+
+
 }
 
 .headline img.logoBanner{
@@ -102,7 +102,7 @@ body {
 }
 
 .userInfoBannerIn h2{
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .inlineh3{
@@ -569,6 +569,53 @@ footer {
     margin-top: 50px;
 }
 
+/* MODAL */
+
+.modal-content {
+    height: 544px;
+}
+
+.modal-content .title {
+    padding-left: 16px
+}
+
+.btn-primary.color-customizable{
+    background-color: #d87300;
+    border-color: transparent;
+}
+
+.modal-body .container{
+    margin-top: 20px;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 257px;
+}
+
+.image-preview-input {
+    position: relative;
+	overflow: hidden;
+	margin: 0px;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.image-preview-input input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.image-preview-input-title {
+    margin-left:2px;
+}
+
 /*USERS*/
 
 .userInfo{
@@ -580,11 +627,51 @@ footer {
     background-color: #f1f2f2;
 }
 
+.new-complaint.btn-info {
+    color: #fff;
+    width: 140px;
+    height: 42px;
+    margin: 5px;
+    background-color: #ff8800;
+    border-color: transparent;
+    will-change: background-color;
+    transition: background-color .4s ease;
+}
+
+.new-complaint.btn-info:hover {
+    background-color: #d87300;
+}
+
+
+.new-complaint.btn-info i {
+    font-size: 21px;
+    color: #fff;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.new-complaint.btn-info span {
+    font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding-top: 2px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
 .sliding-middle-out {
     display: inline-block;
     position: relative;
     padding-bottom: 0px;
 }
+
+.sliding-middle-out i {
+    font-size: 18px;
+    margin: 0 8px;
+}
+
 .sliding-middle-out:after {
     content: '';
     display: block;
@@ -766,7 +853,7 @@ footer {
     /*background-color:rgba(255,255,255,.9);*/
 }
 #login-dp .help-block{
-    font-size:12px    
+    font-size:12px
 }
 #login-dp .bottom{
     background-color:rgba(255,255,255,.9);
@@ -775,7 +862,7 @@ footer {
     padding:14px;
 }
 #login-dp .social-buttons{
-    margin:12px 0    
+    margin:12px 0
 }
 #login-dp .social-buttons a{
     width: 49%;
@@ -789,7 +876,7 @@ footer {
 }
 .btn-fb:hover{
     color: #fff;
-    background-color:#496ebc 
+    background-color:#496ebc
 }
 .btn-tw{
     color: #fff;
@@ -850,7 +937,7 @@ footer {
 
 .arrow-up {
     position: absolute;
-    width: 0; 
+    width: 0;
     height: 0;
     right: 0;
     top: 0;
@@ -859,7 +946,7 @@ footer {
     margin-right: 30px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-  
+
     border-bottom: 5px solid #fff;
     opacity: .9;
 }
@@ -873,7 +960,7 @@ footer {
 }
 
 .formUser button i{
-    
+
 }
 
 .containerFeed{
@@ -1006,7 +1093,7 @@ footer {
 
 /*Toast*/
 #toast {
-    visibility: hidden;  /*Hidden by default. Visible on click*/ 
+    visibility: hidden;  /*Hidden by default. Visible on click*/
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
     background-color: #333; /* Black background color */
@@ -1085,4 +1172,3 @@ footer {
 .stalkingContent div a.deleteStalking .fa-check{
     color: #27ae60 !important;
 }
-
