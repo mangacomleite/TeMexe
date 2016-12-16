@@ -915,6 +915,8 @@ footer {
     padding-top: 30px;
 }
 
+
+
 .containerFeed div.userPost span.socialInfo{
     position: absolute;
     right: 20px;
@@ -922,6 +924,9 @@ footer {
     /*margin-right: 10px;*/
     /*margin-top: 10px;*/
     font-size: 20px;
+}
+.containerFeed div.userPost span.socialInfo img{
+    height: 20px;
 }
 
 .containerFeed div.userPost span.number{
