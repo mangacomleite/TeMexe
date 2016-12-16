@@ -143,6 +143,10 @@ body {
     display: block;
 }
 
+.socialMediaBanner a div i img{
+    height: 25px;
+}
+
 .socialMediaBanner a div span{
 
 }
@@ -990,6 +994,10 @@ footer {
     color: #3b5998;
 }
 
+.tm{
+    color: #d87300;
+}
+
 .tw{
     color: #55acee;
 }
@@ -1083,11 +1091,14 @@ footer {
 .stalkingContent div a.deleteStalking{
     position: absolute;
     right: 30px;
-    margin-top: 3px;
     /*top: 5px;*/
 }
 
 .stalkingContent div a.deleteStalking .fa-check{
     color: #27ae60 !important;
+}
+
+.stalkingContent .userStalking img{
+    height: 16px;
 }
 
