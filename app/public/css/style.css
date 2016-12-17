@@ -352,7 +352,13 @@ footer {
     width: 40px;
     height: 40px;
 }
-
+.nav.navbar-nav.centeredNav .teMexeLittleIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    display: inline-block;;
+    vertical-align: bottom;
+}
 .menuTop .navbar-brand:hover{
     color: #ff6061 !important;
 /*    text-shadow: 3px -2px #e78684;*/
