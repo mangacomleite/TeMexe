@@ -211,18 +211,6 @@ $(function() {
 // Index MAP
 
 function initMap() {
-  // var myLatLng = {lat: -29.9629768, lng: -51.629387};
-  //
-  // var map = new google.maps.Map(document.getElementById('map'), {
-  //   zoom: 15,
-  //   center: myLatLng
-  // });
-  //
-  // var marker = new google.maps.Marker({
-  //   position: myLatLng,
-  //   map: map,
-  //   title: 'Hello World!'
-  // });
   var locations = [
       ['Charqueadas', -29.9629768, -51.629387, 23],
       ['São Jerônimo', -29.962127, -51.7250108, 15],
@@ -231,8 +219,9 @@ function initMap() {
   ];
 
   var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
+      zoom: 9,
       center: new google.maps.LatLng(-29.9629768, -51.629387),
+      scrollwheel:false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
