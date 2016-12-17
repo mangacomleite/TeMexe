@@ -1342,5 +1342,11 @@ footer {
     font-size: 20px;
     color: #d87300;
     margin: 15px;
+}
 
+.badge-notify{
+    background:#d35400;
+    position:absolute;
+    top: 5px;
+    right: 8px;
 }
