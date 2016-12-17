@@ -1,5 +1,18 @@
 var MongoClient = require( 'mongodb' ).MongoClient;
 
+
+function dataAtualFormatada(){
+    var data = new Date();
+    var dia = data.getDate();
+    if (dia.toString().length == 1)
+      dia = "0"+dia;
+    var mes = data.getMonth()+1;
+    if (mes.toString().length == 1)
+      mes = "0"+mes;
+    var ano = data.getFullYear();
+    return dia+"/"+mes+"/"+ano;
+}
+
 module.exports = function( app ) {
 
   app.get( '/user/:username', function ( req, res ) {
@@ -12,17 +25,13 @@ module.exports = function( app ) {
 
       var user = db.collection( 'user' );
 
-      var document = user.findOne({ user: username }, function( err, document ) {
-        document.problemsAndSuggestions = document.problems.concat( document.suggestions );
-
-        for ( var i = 0; i < document.problemsAndSuggestions.length; i++ ) {
-          console.log( document.problemsAndSuggestions[ i ] );
-          if ( document.problemsAndSuggestions[ i ].hasOwnProperty( 'title' ) ) {
-            document.problemsAndSuggestions[ i ].type = 'suggestion'
-          } else {
-            document.problemsAndSuggestions[ i ].type = 'problem'
-          }
+      user.findOne({ user: username }, function( err, document ) {
+        for ( var i = 0; i < document.problems.length; i++ ) {
+          document.problems[ i ].dataFormatada = dataAtualFormatada( document.problems[ i ].date );
+          document.suggestions[ i ].dataFormatada = dataAtualFormatada( document.suggestions[ i ].date );
         }
+
+        document.problemsAndSuggestions = document.problems.concat( document.suggestions );
 
         res.render('profile', { user: document } );
 
