@@ -61,7 +61,7 @@
                     <!-- USER -->
                     <li class="dropdown fontCursive">
                         <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a> -->
-                        <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="img/paulo.jpg"></a>
+                        <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="/<%= userLogado.photo%>"></a>
 
                         <ul id="login-dp" class="dropdown-menu dropdownUser">
                             <div class="arrow-up"></div>
@@ -234,8 +234,8 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
                     <div class="userPost">
                         <a class="userImgName">
-                            <img src="img/paulo.jpg" class="">
-                            <span> Paulo Virote</span>
+                            <img src="/<%=userLogado.photo%>" class="">
+                            <span> <%= userLogado.nome %></span>
                         </a>
                         <hr>
                         <div class="socialMediaBanner miniInfoUser">
@@ -348,8 +348,8 @@
                                         </a>
                                     </span>
                                     <a class="userImgName">
-                                        <img src="img/paulo.jpg" class="">
-                                        <span> @paulosouzav</span>
+                                        <img src="/<%= promAndSug[i].user.photo%>" class="">
+                                        <span> @<%= promAndSug[i].user.user%></span>
                                     </a>
                                     <hr>
                                     <div class="mainPicture">
