@@ -65,14 +65,12 @@
 
                         <ul id="login-dp" class="dropdown-menu dropdownUser">
                             <div class="arrow-up"></div>
-                            <li><a href="#"><i class="fa fa-users"></i> My Accounts</a></li>
-                            <li><a href="#"><i class="fa fa-user-plus"></i> Add Account</a></li>
-                            <li><a href="#"><i class="fa fa-heart-o"></i> Following</a></li>
-                            <li><a href="#"><i class="fa fa-star"></i> Followers</a></li>
+                            <li><a href="#"><i class="fa fa-users"></i> Minha Conta</a></li>
+                            <li><a href="#"><i class="fa fa-user-plus"></i> Perfil</a></li>
 
                             <li class="divider"></li>
 
-                            <li><a href="#" class=""><i class="fa fa-sign-out"></i> Log Out</a></li>
+                            <li><a href="#" class=""><i class="fa fa-sign-out"></i> Sair</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -205,6 +203,9 @@
                         <a href="" data-social="All">Mostrar Todos</a>
                     </li>
                     <li class="sliding-middle-out">
+                        <a href="" data-social="teMexe"><img class="teMexeLittleIcon" src="img/miniCone.png" alt="">Te Mexe</a>
+                    </li>
+                    <li class="sliding-middle-out">
                         <a href="" data-social="Twitter"><i class="fa fa-twitter-square"></i> Twitter</a>
                     </li>
                     <li class="sliding-middle-out">
@@ -212,9 +213,6 @@
                     </li>
                     <li class="sliding-middle-out">
                         <a href="" data-social="Facebook"><i class="fa fa-facebook-square"></i> Facebook</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="">Help</a>
                     </li>
                 </ul>
             </div>
@@ -314,125 +312,70 @@
                     <div class="grid">
 
                         <!-- teMexe -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><img src="img/miniCone.png"></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> @paulosouzav</span>
-                                </a>
-                                <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/buraco.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Que saudade de ter essa vista todos os dias &#128516;</p>
+                        <% for ( var i = 0; i < promAndSug.length; i++ ) { %>
+                            <%
+                                if (promAndSug[i].type == 'fb') {
+                                    var redeSocial = 'dataFacebook';
+                                    var tag = 'facebook';
+                                }else if(promAndSug[i].type == 'tt') {
+                                    var redeSocial = 'dataTwitter';
+                                    var tag = 'twitter';
+                                }else if(promAndSug[i].type == 'insta') {
+                                    var redeSocial = 'dataInstagram';
+                                    var tag = 'instagram';
+                                }else if(promAndSug[i].type == 'suggestion') {
+                                    var redeSocial = 'dataTeMexe';
+                                    var tag = 'teMexe';
+                                }else {
+                                    var redeSocial = '';
+                                }
+
+                                if( i == 0) {
+                                    var gridSizer = 'grid-sizer';
+                                }else {
+                                    var gridSizer = '';
+                                }
+                            %>
+                            <div class="col-lg-4 col-md-4 col-sm-6 grid-item <%= gridSizer %> <%= redeSocial %>">
+                                <div class="userPost">
+                                    <span class="socialInfo">
+                                        <a href="#">
+                                            <% if( tag !== 'teMexe') { %>
+                                                <i class="fa fa-<%=tag%>"></i>
+                                            <% }else { %>
+                                                <img src="/img/miniCone.png" alt=""/>
+                                            <% } %>
+                                        </a>
+                                    </span>
+                                    <a class="userImgName">
+                                        <img src="img/paulo.jpg" class="">
+                                        <span> @paulosouzav</span>
+                                    </a>
                                     <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Concordar"><i class="fa fa-hand-o-up"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 horas atrás</a>
+                                    <div class="mainPicture">
+                                        <a><img src="/<%= promAndSug[i].image %>"></a>
+                                    </div>
+                                    <div class="postContent">
+                                        <p> <%= promAndSug[i].description %> </p>
+                                        <hr>
+                                    </div>
+                                    <div class="postData fontCursive">
+                                        <% if( tag !== 'teMexe') { %>
+                                            <a href="" title="Concordar" class="like">
+                                                <i class="fa fa-heart-o"></i>
+                                                <span> <%=promAndSug[i].likes %></span>
+                                            </a>
+                                        <% }else { %>
+                                            <a href="" title="Concordar" class="voteSuggestion">
+                                                <i class="fa fa-hand-o-up"></i>
+                                                <span> <%=promAndSug[i].likes%></span>
+                                            </a>
+                                        <% } %>
+                                        <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 horas atrás</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Instagram -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-instagram ig"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> @paulosouzav</span>
-                                </a>
-                                <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/galeria/1.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Que saudade de ter essa vista todos os dias &#128516;</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Twitter -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataTwitter">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-twitter tw"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulotw.jpeg" class="">
-                                    <span> @pauloovs</span>
-                                </a>
-                                <hr>
-                                <div class="postContent">
-                                    <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Facebook -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataFacebook">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-facebook fb"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulofb.jpg" class="">
-                                    <span> @paulo.vdesouza</span>
-                                </a>
-                                <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/postFb.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Hoje nossa comunidade chora. É com um enorme aperto no peito que eu venho deixar meus sentimentos à família de um dos melhores professores e também um grande amigo que eu tive a oportunidade e o prazer de trabalhar junto... <a href="#">See More</a></p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3.5 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Twitter -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataTwitter">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-twitter tw"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulotw.jpeg" class="">
-                                    <span> @pauloovs</span>
-                                </a>
-                                <hr>
-                                <div class="postContent">
-                                    <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
+                        <% } %>
                         <!-- END -->
 
                     </div> <!-- /grid -->

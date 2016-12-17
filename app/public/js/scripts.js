@@ -104,6 +104,49 @@ $('.vote').on('click', function(){
     $(this).toggleClass('votado');
 });
 
+// Like, dislike, vote
+
+$('.like').on('click', function(e){
+    e.preventDefault();
+    $(this).find('i').each(function(){
+        $(this).toggleClass('fa-heart-o fa-heart');
+    });
+
+    $(this).find('span').each(function(){
+        var x = parseInt( $(this).text());
+
+        $(this).parent().find('i').each(function() {
+            if( $(this).hasClass('fa-heart')) {
+                x++;
+            }else {
+                x--;
+            }
+        });
+        $(this).text(x);
+    });
+});
+
+$('.voteSuggestion').on('click', function(e){
+    e.preventDefault();
+    $(this).find('i').each(function(){
+        $(this).toggleClass('fa-hand-o-up fa-hand-rock-o');
+    });
+
+    $(this).find('span').each(function(){
+        var x = parseInt( $(this).text());
+
+        $(this).parent().find('i').each(function() {
+            if( $(this).hasClass('fa-hand-rock-o')) {
+                x++;
+            }else {
+                x--;
+            }
+        });
+        $(this).text(x);
+    });
+
+});
+
 // MODAL
 
 $(document).on('click', '#close-preview', function(){
