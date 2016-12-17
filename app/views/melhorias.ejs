@@ -216,71 +216,49 @@
                         <!-- teMexe -->
 
                         <ul>
-                            <li data-toggle="modal" data-target="#improvementModal">
-                                <div class="col-md-12 improvement-item">
-                                    <div class="details">
-                                        <span class="position">1º</span>
-                                        <h3 class="title">Título Melhoria</h3>
+                            <% for ( var i = 0; i < melhorias.length; i++ ) { %>
+                                <li data-toggle="modal" data-target="#improvementModal-<%=i+1%>">
+                                    <div class="col-md-12 improvement-item">
+                                        <div class="details">
+                                            <span class="position"><%=i+1%>º</span>
+                                            <h3 class="title"><%= melhorias[i].title %></h3>
+                                        </div>
+                                        <div class="voteNumber">
+                                            <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                                            <span class="votes"><%= melhorias[i].likes %></span>
+                                        </div>
                                     </div>
-                                    <div class="voteNumber">
-                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                                        <span class="votes">250</span>
+                                </li>
+                                <div class="modal fade" id="improvementModal-<%=i+1%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <div class="votesNumber"><span><%= melhorias[i].likes %></span> Votos</div>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <div class="image">
+                                                    <img src="/<%= melhorias[i].image %>" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h4 class="modal-title"><%= melhorias[i].title %></h4>
+                                                <div class="descricao-melhoria">
+                                                    <p><%= melhorias[i].description %></p>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                                <button type="button" class="btn btn-primary vote"><span>Votar</span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li data-toggle="modal" data-target="#improvementModal">
-                                <div class="col-md-12 improvement-item">
-                                    <div class="details">
-                                        <span class="position">2º</span>
-                                        <h3 class="title">Título Melhoria</h3>
-                                    </div>
-                                    <div class="voteNumber">
-                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                                        <span class="votes">100</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li data-toggle="modal" data-target="#improvementModal">
-                                <div class="col-md-12 improvement-item">
-                                    <div class="details">
-                                        <span class="position">3º</span>
-                                        <h3 class="title">Título Melhoria</h3>
-                                    </div>
-                                    <div class="voteNumber">
-                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-                                        <span class="votes">90</span>
-                                    </div>
-                                </div>
-                            </li>
+                            <%}%>
+
                         </ul>
 
                         <!-- END -->
 
                     </div> <!-- /grid -->
-
-                    <div class="modal fade" id="improvementModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="votesNumber"><span>250</span> Votos</div>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <div class="image">
-                                        <img src="img/preferencia.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="modal-body">
-                                    <h4 class="modal-title">Título Melhoria</h4>
-                                    <div class="descricao-melhoria">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, similique corporis consequatur, enim consequuntur, sint illo sed deleniti quam in cum iste at molestiae quod amet architecto quis quos atque maiores modi magni veritatis rem. Esse fuga reprehenderit enim facilis, quam iusto nisi voluptates nemo, porro culpa perspiciatis dicta aut sapiente fugit rerum quae quidem cupiditate temporibus obcaecati deleniti. Nobis minima dolores deleniti architecto reprehenderit pariatur ducimus voluptas, quos iste culpa dolore qui odit itaque illum doloremque blanditiis! Assumenda itaque illo doloremque deleniti ad ratione voluptatibus, inventore dolorem, deserunt possimus tempora quaerat consectetur totam nulla ipsum odio maiores ex pariatur!</p>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-primary vote"><span>Votar</span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div> <!-- /row -->
                 <div class="row text-center loadMore">
