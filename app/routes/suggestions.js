@@ -1,6 +1,8 @@
-var fs = require( 'fs' );
-var multipart = require('connect-multiparty');
+var fs                  = require( 'fs' );
+var multipart           = require('connect-multiparty');
 var multipartMiddleware = multipart();
+var MongoClient         = require( 'mongodb' ).MongoClient;
+var assert              = require( 'assert' );
 
 module.exports = function(app) {
 
@@ -11,7 +13,7 @@ module.exports = function(app) {
   app.post( '/sugestoes', multipartMiddleware, function( request, response ) {
 
     var suggestion = request.body;
-    var connection = app.infra.connectionFactory();
+    let suggestionPath;
 
     fs.readFile( request.files.image.path, function ( err, data ) {
 
@@ -22,17 +24,30 @@ module.exports = function(app) {
         extension = 'jpg';
       }
 
-      var path = "uploads/" + Date.now() + '.' + extension;
-      var newPath = __dirname + "/../public/" + path;
+      suggestionPath = "uploads/" + Date.now() + '.' + extension;
+      var newPath = __dirname + "/../public/" + suggestionPath;
+      suggestion.image = suggestionPath;
 
-      suggestion.image = path;
+      fs.writeFile(newPath, data);
 
-      console.log( suggestion );
+      var url = 'mongodb://localhost:27017/mangaComLeite';
 
-      fs.writeFile(newPath, data, function (err) {
-        connection.query( 'insert into suggestions set ?', suggestion, function( errors, results ) {
-          response.redirect( '/' );
-        });
+      MongoClient.connect( url, function( err, db ) {
+        if( err ) { return console.dir( err ); }
+
+        var user = db.collection( 'user' );
+
+        user.update(
+          { user: 'victorserpac' },
+          {
+            $push: { suggestions: suggestion }
+          },
+          { w: 1 },
+          function( err, result ) {
+            response.redirect( '/' );
+          }
+        );
+
       });
     });
 
