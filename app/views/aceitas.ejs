@@ -40,7 +40,7 @@
                             var tw = 0;
                             var it = 0;
                             var tm = 0;
-                            for ( var i = 0; i < userLogado.problems.length; i++ ) { 
+                            for ( var i = 0; i < userLogado.problems.length; i++ ) {
                                 var varName = userLogado.problems[ i ].type;
 
                                 if (varName.localeCompare("fb")==0) {
@@ -53,7 +53,7 @@
                                     tm++;
                                 }
                             }
-                            for ( var i = 0; i < userLogado.suggestions.length; i++ ) { 
+                            for ( var i = 0; i < userLogado.suggestions.length; i++ ) {
                                 var varName = userLogado.suggestions[ i ].type;
 
                                 if (varName.localeCompare("fb")==0) {
@@ -183,18 +183,18 @@
                     <div class="grid">
 
                         <!-- teMexe -->
-                        <% for ( var i = 0; i < promAndSug.length; i++ ) { %>
+                        <% for ( var i = 0; i < suggestions.length; i++ ) { %>
                             <%
-                                if (promAndSug[i].type == 'fb') {
+                                if (suggestions[i].type == 'fb') {
                                     var redeSocial = 'dataFacebook';
                                     var tag = 'facebook';
-                                }else if(promAndSug[i].type == 'tt') {
+                                }else if(suggestions[i].type == 'tt') {
                                     var redeSocial = 'dataTwitter';
                                     var tag = 'twitter';
-                                }else if(promAndSug[i].type == 'insta') {
+                                }else if(suggestions[i].type == 'insta') {
                                     var redeSocial = 'dataInstagram';
                                     var tag = 'instagram';
-                                }else if(promAndSug[i].type == 'suggestion') {
+                                }else if(suggestions[i].type == 'suggestion') {
                                     var redeSocial = 'dataTeMexe';
                                     var tag = 'teMexe';
                                 }else {
@@ -208,7 +208,7 @@
                                 }
                             %>
                             <div class="col-lg-4 col-md-4 col-sm-6 grid-item <%= gridSizer %> <%= redeSocial %>">
-                                
+
                                 <%if (i%4!=0) {%>
                                     <div class="userPost">
                                 <%} else{%>
@@ -227,30 +227,30 @@
                                         </a>
                                     </span>
                                     <a class="userImgName">
-                                        <img src="/<%= promAndSug[i].user.photo%>" class="">
-                                        <span> @<%= promAndSug[i].user.user%></span>
+                                        <img src="/<%= suggestions[i].user.photo%>" class="">
+                                        <span> @<%= suggestions[i].user.user%></span>
                                     </a>
                                     <hr>
                                     <div class="mainPicture">
-                                        <a><img src="/<%= promAndSug[i].image %>"></a>
+                                        <a><img src="/<%= suggestions[i].image %>"></a>
                                     </div>
                                     <div class="postContent">
-                                        <p> <%= promAndSug[i].description %> </p>
+                                        <p> <%= suggestions[i].description %> </p>
                                         <hr>
                                     </div>
                                     <div class="postData fontCursive">
                                         <% if( tag !== 'teMexe') { %>
                                             <a href="" title="Concordar" class="like">
                                                 <i class="fa fa-heart-o"></i>
-                                                <span> <%=promAndSug[i].likes %></span>
+                                                <span> <%=suggestions[i].likes %></span>
                                             </a>
                                         <% }else { %>
                                             <a href="" title="Concordar" class="voteSuggestion">
                                                 <i class="fa fa-hand-o-up"></i>
-                                                <span> <%=promAndSug[i].likes%></span>
+                                                <span> <%=suggestions[i].likes%></span>
                                             </a>
                                         <% } %>
-                                        <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> <%=promAndSug[i].dataFormatada%></a>
+                                        <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> <%=suggestions[i].dataFormatada%></a>
                                     </div>
                                 </div>
                             </div>
