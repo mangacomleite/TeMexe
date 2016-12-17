@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left mainNavbar">
                     <li class="sliding-middle-out"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
-                    <li class="sliding-middle-out slidingActive"><a href="curtidas.html"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
+                    <li class="sliding-middle-out slidingActive"><a href="melhorias.html"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
                     <li class="sliding-middle-out"><a href="dicas.html"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -72,12 +72,21 @@
                             <li><a href="#">Ver Todos</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <button type="button" class="btn new-complaint btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                            <span>Reclamação</span>
-                        </button>
+
+                    <!-- ACOES -->
+                    <li class="dropdown fontCursive">
+                        <!-- <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="img/paulo.jpg"></a> -->
+                        <button class="btn dropdown-toggle dropdown-acoes" type="button" data-toggle="dropdown">Ações
+                          <span class="caret"></span></button>
+
+                        <ul id="login-dp" class="dropdown-menu dropdownUser dropdownAcoes">
+                            <div class="arrow-up"></div>
+                            <li><a href="#" data-toggle="modal" data-target="#modalReclamacao"><i class="fa fa-plus"></i> Reclamação</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modalMelhoria"><i class="fa fa-plus"></i> Melhoria</a></li>
+                        </ul>
                     </li>
+
+                    <!-- USER -->
                     <li class="dropdown fontCursive">
                         <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a> -->
                         <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="img/paulo.jpg"></a>
@@ -229,7 +238,7 @@
 
             <div class="col-lg-9 col-md-9 col-sm-12">
                 <div class="row">
-                    <div class="grid improvement-page">
+                    <div class="improvement-page">
 
                         <!-- teMexe -->
 
@@ -315,7 +324,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; stalkMe 2016. Created by <a href="#">Paulo Virote de Souza</a>.</p>
+                    <p>Copyright &copy; teMexe! 2016. Created by <a href="#">Manga com Leite</a>.</p>
                 </div>
             </div>
         </footer>
