@@ -8,10 +8,6 @@ var assert              = require( 'assert' );
 
 module.exports = function(app) {
 
-  app.get( '/problemas', function( request, response ) {
-    response.render( 'problems/form' );
-  });
-
   app.post( '/problemas', multipartMiddleware, function( request, response ) {
 
     var problem = request.body;

@@ -24,19 +24,20 @@ module.exports = function( app ) {
       if( err ) { return console.dir( err ); }
 
       var user = db.collection( 'user' );
-
-      user.findOne({ user: username }, function( err, document ) {
-        if ( document ) {
-          for ( var i = 0; i < document.problems.length; i++ ) {
-            document.problems[ i ].dataFormatada = dataAtualFormatada( document.problems[ i ].date );
-            document.suggestions[ i ].dataFormatada = dataAtualFormatada( document.suggestions[ i ].date );
+      db.collection( 'user' ).findOne({ user: 'milenevlacerda' }, function( err, userLogado ) {
+        user.findOne({ user: username }, function( err, document ) {
+          if ( document ) {
+            for ( var i = 0; i < document.problems.length; i++ ) {
+              document.problems[ i ].dataFormatada = dataAtualFormatada( document.problems[ i ].date );
+              document.suggestions[ i ].dataFormatada = dataAtualFormatada( document.suggestions[ i ].date );
+            }
+            document.problemsAndSuggestions = document.problems.concat( document.suggestions );
           }
-          document.problemsAndSuggestions = document.problems.concat( document.suggestions );
-        }
 
 
-        res.render('profile', { user: document } );
+          res.render('profile', { user: document, userLogado: userLogado } );
 
+        });
       });
     });
 
