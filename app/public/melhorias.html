@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left mainNavbar">
                     <li class="sliding-middle-out slidingActive"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
-                    <li class="sliding-middle-out"><a href="melhorias.html"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
+                    <li class="sliding-middle-out"><a href="curtidas.html"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="sliding-middle-out"><a href=""><i class="fa fa-bell-o"></i></a></li>
@@ -105,12 +105,12 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="/problemas" method="post" enctype="multipart/form-data">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Nova Reclamação</h4>
-                    </div>
-                    <div class="modal-body">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Nova Reclamação</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/problemas" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="description">Descrição:</label>
                             <input type="text" name="description" class="form-control" id="description">
@@ -132,7 +132,7 @@
                                                 <div class="btn btn-default image-preview-input">
                                                     <span class="glyphicon glyphicon-folder-open"></span>
                                                     <span class="image-preview-input-title">Browse</span>
-                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="name"/> <!-- rename it -->
+                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="input-file-preview"/> <!-- rename it -->
                                                 </div>
                                             </span>
                                         </div><!-- /input-group image-preview [TO HERE]-->
@@ -140,12 +140,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                        <input type="submit" class="btn btn-primary color-customizable"/ value="Publicar">
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
+                </div>
             </div>
         </div>
     </div>
@@ -331,131 +331,77 @@
 
             <div class="col-lg-9 col-md-9 col-sm-12">
                 <div class="row">
-                    <div class="grid">
+                    <div class="grid improvement-page">
 
                         <!-- teMexe -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><img src="img/miniCone.png"></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> @paulosouzav</span>
-                                </a>
-                                <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/buraco.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Que saudade de ter essa vista todos os dias &#128516;</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Concordar"><i class="fa fa-hand-o-up"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Instagram -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-instagram ig"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> @paulosouzav</span>
-                                </a>
-                                <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/galeria/1.jpg"></a>
+                        <ul>
+                            <li data-toggle="modal" data-target="#improvementModal">
+                                <div class="col-md-12 improvement-item">
+                                    <div class="details">
+                                        <span class="position">1º</span>
+                                        <h3 class="title">Título Melhoria</h3>
+                                    </div>
+                                    <div class="voteNumber">
+                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                                        <span class="votes">250</span>
+                                    </div>
                                 </div>
-                                <div class="postContent">
-                                    <p>Que saudade de ter essa vista todos os dias &#128516;</p>
-                                    <hr>
+                            </li>
+                            <li data-toggle="modal" data-target="#improvementModal">
+                                <div class="col-md-12 improvement-item">
+                                    <div class="details">
+                                        <span class="position">2º</span>
+                                        <h3 class="title">Título Melhoria</h3>
+                                    </div>
+                                    <div class="voteNumber">
+                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                                        <span class="votes">100</span>
+                                    </div>
                                 </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 horas atrás</a>
+                            </li>
+                            <li data-toggle="modal" data-target="#improvementModal">
+                                <div class="col-md-12 improvement-item">
+                                    <div class="details">
+                                        <span class="position">3º</span>
+                                        <h3 class="title">Título Melhoria</h3>
+                                    </div>
+                                    <div class="voteNumber">
+                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                                        <span class="votes">90</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
 
-                        <!-- Twitter -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataTwitter">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-twitter tw"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulotw.jpeg" class="">
-                                    <span> @pauloovs</span>
-                                </a>
-                                <hr>
-                                <div class="postContent">
-                                    <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Facebook -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataFacebook">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-facebook fb"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulofb.jpg" class="">
-                                    <span> @paulo.vdesouza</span>
-                                </a>
-                                <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/postFb.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Hoje nossa comunidade chora. É com um enorme aperto no peito que eu venho deixar meus sentimentos à família de um dos melhores professores e também um grande amigo que eu tive a oportunidade e o prazer de trabalhar junto... <a href="#">See More</a></p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3.5 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Twitter -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataTwitter">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-twitter tw"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulotw.jpeg" class="">
-                                    <span> @pauloovs</span>
-                                </a>
-                                <hr>
-                                <div class="postContent">
-                                    <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 horas atrás</a>
-                                </div>
-                            </div>
-                        </div>
                         <!-- END -->
 
                     </div> <!-- /grid -->
+
+                    <div class="modal fade" id="improvementModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="votesNumber"><span>250</span> Votos</div>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <div class="image">
+                                        <img src="img/preferencia.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 class="modal-title">Título Melhoria</h4>
+                                    <div class="descricao-melhoria">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, similique corporis consequatur, enim consequuntur, sint illo sed deleniti quam in cum iste at molestiae quod amet architecto quis quos atque maiores modi magni veritatis rem. Esse fuga reprehenderit enim facilis, quam iusto nisi voluptates nemo, porro culpa perspiciatis dicta aut sapiente fugit rerum quae quidem cupiditate temporibus obcaecati deleniti. Nobis minima dolores deleniti architecto reprehenderit pariatur ducimus voluptas, quos iste culpa dolore qui odit itaque illum doloremque blanditiis! Assumenda itaque illo doloremque deleniti ad ratione voluptatibus, inventore dolorem, deserunt possimus tempora quaerat consectetur totam nulla ipsum odio maiores ex pariatur!</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary vote"><span>Votar</span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div> <!-- /row -->
                 <div class="row text-center loadMore">
                     <button class="btn btn-banner btn2 redViz fontCursive">Ver Mais Postagens</button>
