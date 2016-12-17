@@ -40,7 +40,7 @@
                             var tw = 0;
                             var it = 0;
                             var tm = 0;
-                            for ( var i = 0; i < userLogado.problems.length; i++ ) {
+                            for ( var i = 0; i < userLogado.problems.length; i++ ) { 
                                 var varName = userLogado.problems[ i ].type;
 
                                 if (varName.localeCompare("fb")==0) {
@@ -53,7 +53,7 @@
                                     tm++;
                                 }
                             }
-                            for ( var i = 0; i < userLogado.suggestions.length; i++ ) {
+                            for ( var i = 0; i < userLogado.suggestions.length; i++ ) { 
                                 var varName = userLogado.suggestions[ i ].type;
 
                                 if (varName.localeCompare("fb")==0) {
@@ -194,7 +194,7 @@
                                 }else if(promAndSug[i].type == 'insta') {
                                     var redeSocial = 'dataInstagram';
                                     var tag = 'instagram';
-                                }else if(promAndSug[i].type == 'suggestion' || promAndSug[i].type == 'TeMexe') {
+                                }else if(promAndSug[i].type == 'suggestion') {
                                     var redeSocial = 'dataTeMexe';
                                     var tag = 'teMexe';
                                 }else {
