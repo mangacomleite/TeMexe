@@ -26,12 +26,14 @@ module.exports = function( app ) {
       var user = db.collection( 'user' );
 
       user.findOne({ user: username }, function( err, document ) {
-        for ( var i = 0; i < document.problems.length; i++ ) {
-          document.problems[ i ].dataFormatada = dataAtualFormatada( document.problems[ i ].date );
-          document.suggestions[ i ].dataFormatada = dataAtualFormatada( document.suggestions[ i ].date );
+        if ( document.problems ) {
+          for ( var i = 0; i < document.problems.length; i++ ) {
+            document.problems[ i ].dataFormatada = dataAtualFormatada( document.problems[ i ].date );
+            document.suggestions[ i ].dataFormatada = dataAtualFormatada( document.suggestions[ i ].date );
+          }
+          document.problemsAndSuggestions = document.problems.concat( document.suggestions );
         }
 
-        document.problemsAndSuggestions = document.problems.concat( document.suggestions );
 
         res.render('profile', { user: document } );
 
