@@ -16,10 +16,29 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left mainNavbar">
-                    <li class="sliding-middle-out slidingActive"><a href="/"><i class="fa fa-heart-o"></i> Feed</a></li>
-                    <li class="sliding-middle-out"><a href="/melhorias"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
-                    <li class="sliding-middle-out"><a href="/aceitas.html"><i class="fa fa-thumbs-o-up"></i> Aceitas</a></li>
-                    <li class="sliding-middle-out"><a href="/dicas"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
+                    <% if(routeName && routeName == 'home' ) {%>
+                      <li class="sliding-middle-out slidingActive"><a href="/"><i class="fa fa-heart-o"></i> Feed</a></li>
+                    <% } else { %>
+                      <li class="sliding-middle-out"><a href="/"><i class="fa fa-heart-o"></i> Feed</a></li>
+                    <% } %>
+
+                    <% if(routeName && routeName == 'melhorias' ) {%>
+                      <li class="sliding-middle-out slidingActive"><a href="/melhorias"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
+                    <% } else { %>
+                      <li class="sliding-middle-out"><a href="/melhorias"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
+                    <% } %>
+
+                    <% if(routeName && routeName == 'aceitas' ) {%>
+                      <li class="sliding-middle-out slidingActive"><a href="/aceitas.html"><i class="fa fa-thumbs-o-up"></i> Aceitas</a></li>
+                    <% } else { %>
+                      <li class="sliding-middle-out"><a href="/aceitas.html"><i class="fa fa-thumbs-o-up"></i> Aceitas</a></li>
+                    <% } %>
+
+                    <% if(routeName && routeName == 'dicas' ) {%>
+                      <li class="sliding-middle-out slidingActive"><a href="/dicas"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
+                    <% } else { %>
+                      <li class="sliding-middle-out"><a href="/dicas"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
+                    <% } %>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <!-- USER -->
