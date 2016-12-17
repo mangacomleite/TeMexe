@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>teMexe!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/logoNew.png">
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top topnav menuTop" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav fontCursive sizeCursive" href="index.html"><img src="img/logoNew.png" class="logoMenu"> te<span class="redStk">Mexe</span>!</a>
+
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left mainNavbar">
+                    <li class="sliding-middle-out"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
+                    <li class="sliding-middle-out"><a href="melhorias.html"><i class="fa fa-check"></i> Melhorias</a></li>
+                    <li class="sliding-middle-out slidingActive"><a href="dicas.html"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" id="searchResults">
+                        <!-- <a href=""><i class="fa fa-search"></i></a> -->
+
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="input-group input-search-top">
+                                <input type="text" class="form-control" placeholder="Search..." id="searchInput" autocomplete="off">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </form>
+                        <ul class="dropdown-menu dropdownResults">
+                            <div class="arrow-up"></div>
+                            <div class="loading text-center">
+                                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                            </div>
+                            <li class="divider"></li>
+                            <li><a href="#">Ver todos</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- ACOES -->
+                    <li class="dropdown fontCursive">
+                        <!-- <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="img/paulo.jpg"></a> -->
+                        <button class="btn dropdown-toggle dropdown-acoes" type="button" data-toggle="dropdown">Ações
+                          <span class="caret"></span></button>
+
+                        <ul id="login-dp" class="dropdown-menu dropdownUser dropdownAcoes">
+                            <div class="arrow-up"></div>
+                            <li><a href="#" data-toggle="modal" data-target="#modalReclamacao"><i class="fa fa-plus"></i> Reclamação</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modalMelhoria"><i class="fa fa-plus"></i> Melhoria</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- USER -->
+                    <li class="dropdown fontCursive">
+                        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a> -->
+                        <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="img/paulo.jpg"></a>
+
+                        <ul id="login-dp" class="dropdown-menu dropdownUser">
+                            <div class="arrow-up"></div>
+                            <li><a href="#"><i class="fa fa-users"></i> My Accounts</a></li>
+                            <li><a href="#"><i class="fa fa-user-plus"></i> Add Account</a></li>
+                            <li><a href="#"><i class="fa fa-heart-o"></i> Following</a></li>
+                            <li><a href="#"><i class="fa fa-star"></i> Followers</a></li>
+
+                            <li class="divider"></li>
+
+                            <li><a href="#" class=""><i class="fa fa-sign-out"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- New Complaint Modal -->
+    <div class="modal fade" id="modalReclamacao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Nova Reclamação</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/problemas" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="description">Descrição:</label>
+                            <input type="text" name="description" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                            <div class="container">
+                                <div class="row">
+                                    <label for="image" class="title">Imagem:</label>
+                                    <div class="col-md-12">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <span class="image-preview-input-title">Browse</span>
+                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="input-file-preview"/> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Improvement Modal -->
+    <div class="modal fade" id="modalMelhoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sugestão de melhoria</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/problemas" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="description">Título:</label>
+                            <input type="text" name="description" class="form-control" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descrição:</label>
+                            <input type="text" name="description" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                            <div class="container">
+                                <div class="row">
+                                    <label for="image" class="title">Imagem:</label>
+                                    <div class="col-md-12">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <span class="image-preview-input-title">Browse</span>
+                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="input-file-preview"/> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Width Image Header -->
+    <header class="header-feed" id="top">
+        <div class="bannerFeed">
+            <div class="container">
+                <h1 class="fontCursive">
+                    <img class="picview-image img-circle img-responsive" src="img/logoNew.png">
+                    te<span class="redStk">Mexe</span>!
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+
+    <!-- <h1 class="text-center"><span class="redViz fontCursive">Feed</span>.</h1> -->
+
+    <!-- FEED -->
+    <div class="containerFeed">
+        <div class="container ">
+            <div class="row">
+                <div class="grid">
+                    
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/sinalVermelho.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 293,47</h1>
+                                <p>Este é o quanto você paga por avançar no sinal vermelho além de receber 7 pontos na carteira. Não fure!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/contraMao.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 293,47</h1> -->
+                                <p>Ciclista, não pedale na contramão!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/maoEsticada.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 293,47</h1> -->
+                                <p>Estique o braço com as mãos abertas manifestando a intenção de atravessar.</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/luzFreio.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 293,47</h1> -->
+                                <p>Dê pequenos toques de aviso no freio para se comunicar com o condutor que vem atrás!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/acostamento.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 880,41</h1>
+                                <p>Este é o quanto você paga por dirigir no acostamento além de receber 7 pontos na carteira!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/olheLados.png"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 880,41</h1> -->
+                                <p>Tenha visibilidade, olhe para os dois lados.</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/velocidade.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 880,41</h1>
+                                <p>Este é o quanto você paga por dirigir com excesso de velocidade (50%) além de receber 7 pontos na carteira!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/faixaPedestre.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 130,16</h1>
+                                <p>Este é o quanto você paga por parar na faixa de semestre além de receber 4 pontos na carteira!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div> <!-- /grid -->
+            </div> <!-- /row -->
+            <div class="row text-center">
+                <button class="btn btn-banner btn2 redViz fontCursive">Mais Dicas</button>
+            </div>
+        </div> <!-- /container -->
+    </div><!-- /containerFeed -->
+
+    <div class="container">
+        <!-- <hr class="picview-divider"> -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; teMexe! 2016. Created by <a href="#">Manga com Leite</a>.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
