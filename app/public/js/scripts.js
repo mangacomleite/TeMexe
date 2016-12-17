@@ -96,6 +96,14 @@ $(document).ready(function() {
 
 });
 
+// VOTAR
+
+$('.vote').on('click', function(){
+    var text = $(this).text() == 'Votar' ? 'Votado' : 'Votar';
+    $(this).find('span').text(text);
+    $(this).toggleClass('votado');
+});
+
 // MODAL
 
 $(document).on('click', '#close-preview', function(){
@@ -152,7 +160,7 @@ $(function() {
             $(".image-preview-filename").val(file.name);
             img.attr('src', e.target.result);
             $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
-        };     
+        };
         reader.readAsDataURL(file);
     });
 });
