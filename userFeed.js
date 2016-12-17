@@ -9,11 +9,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Paulo Virote',
     user: 'paulovsouza',
-    photo: '/img/paulo.jpg',
+    photo: 'img/paulo.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-1.jpg',
+        image: 'img/problem-1.jpg',
         likes: '20',
         type: 'insta'
       }
@@ -22,7 +22,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-1.jpg',
+        image: 'img/suggestion-1.jpg',
         likes: '11',
         type: 'suggestion'
       }
@@ -32,11 +32,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Milene Lacerda',
     user: 'milenevlacerda',
-    photo: '/img/milene.jpg',
+    photo: 'img/milene.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-2.jpg',
+        image: 'img/problem-2.jpg',
         like: '30',
         type: 'fb'
       }
@@ -45,7 +45,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 2',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-2.jpg',
+        image: 'img/suggestion-2.jpg',
         likes: '15',
         type: 'suggestion'
       }
@@ -55,11 +55,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Victor Serpa',
     user: 'victorserpac',
-    photo: '/img/victor.jpg',
+    photo: 'img/victor.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-3.jpg',
+        image: 'img/problem-3.jpg',
         likes: '22',
         type: 'insta'
       }
@@ -68,7 +68,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 3',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-3.jpg',
+        image: 'img/suggestion-3.jpg',
         likes: '40',
         type: 'suggestion'
       }
@@ -78,11 +78,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Evelyn Lacerda',
     user: 'evelynlacerda',
-    photo: '/img/evelyn.jpg',
+    photo: 'img/evelyn.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-4.jpg',
+        image: 'img/problem-4.jpg',
         likes: '32',
         type: 'tt'
       }
@@ -91,7 +91,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 4',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-4.jpg',
+        image: 'img/suggestion-4.jpg',
         likes: '5',
         type: 'suggestion'
       }
@@ -101,11 +101,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Edison Lacerda',
     user: 'edisonlacerda',
-    photo: '/img/edison.jpg',
+    photo: 'img/edison.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-5.jpg',
+        image: 'img/problem-5.jpg',
         likes: '12',
         type: 'fb'
       }
@@ -114,7 +114,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 5',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-5.jpg',
+        image: 'img/suggestion-5.jpg',
         likes: '2',
         type: 'suggestion'
       }
@@ -124,11 +124,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Keli Vieira',
     user: 'kelivieira',
-    photo: '/img/keli.jpg',
+    photo: 'img/keli.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-6.jpg',
+        image: 'img/problem-6.jpg',
         likes: '28',
         type: 'fb'
       }
@@ -137,7 +137,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 6',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-6.jpg',
+        image: 'img/suggestion-6.jpg',
         likes: '8',
         type: 'suggestion'
       }
@@ -147,11 +147,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Calebe Micael',
     user: 'calebemicael',
-    photo: '/img/calebe.jpg',
+    photo: 'img/calebe.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-7.jpg',
+        image: 'img/problem-7.jpg',
         likes: '50',
         type: 'tt'
       }
@@ -160,7 +160,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 7',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-7.jpg',
+        image: 'img/suggestion-7.jpg',
         likes: '10',
         type: 'suggestion'
       }
@@ -170,11 +170,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Cleber Fonseca',
     user: 'cleberfonseca',
-    photo: '/img/cleber.jpg',
+    photo: 'img/cleber.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-8.jpg',
+        image: 'img/problem-8.jpg',
         likes: '34',
         type: 'fb'
       }
@@ -183,7 +183,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 8',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-8.jpg',
+        image: 'img/suggestion-8.jpg',
         likes: '15',
         type: 'suggestion'
       }
@@ -193,11 +193,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Mauricio Escobar',
     user: 'mauricioescobar',
-    photo: '/img/mauricio.jpg',
+    photo: 'img/mauricio.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-9.jpg',
+        image: 'img/problem-9.jpg',
         likes: '45',
         type: 'insta'
       }
@@ -206,7 +206,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 9',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-9.jpg',
+        image: 'img/suggestion-9.jpg',
         likes: '30',
         type: 'suggestion'
       }
@@ -216,11 +216,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Glederson Santos',
     user: 'gledersonsantos',
-    photo: '/img/glederson-10.jpg',
+    photo: 'img/glederson-10.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem.jpg',
+        image: 'img/problem.jpg',
         likes: '35',
         type: 'insta'
       }
@@ -229,7 +229,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 10',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-10.jpg',
+        image: 'img/suggestion-10.jpg',
         likes: '40',
         type: 'suggestion'
       }
@@ -239,11 +239,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Pablo Werlang',
     user: 'pablowerlang',
-    photo: '/img/pablo.jpg',
+    photo: 'img/pablo.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-11.jpg',
+        image: 'img/problem-11.jpg',
         likes: '18',
         type: 'tt'
       }
@@ -252,7 +252,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 11',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-11.jpg',
+        image: 'img/suggestion-11.jpg',
         likes: '27',
         type: 'suggestion'
       }
@@ -262,11 +262,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Felipe Thomas',
     user: 'felipethomas',
-    photo: '/img/felipe.jpg',
+    photo: 'img/felipe.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-12.jpg',
+        image: 'img/problem-12.jpg',
         likes: '19',
         type: 'fb'
       }
@@ -275,7 +275,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 12',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-12.jpg',
+        image: 'img/suggestion-12.jpg',
         likes: '33',
         type: 'suggestion'
       }
@@ -285,11 +285,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Anelise Kologeski',
     user: 'anelisekologeski',
-    photo: '/img/anelise.jpg',
+    photo: 'img/anelise.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-13.jpg',
+        image: 'img/problem-13.jpg',
         likes: '20',
         type: 'insta'
       }
@@ -298,7 +298,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 13',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-13.jpg',
+        image: 'img/suggestion-13.jpg',
         likes: '44',
         type: 'suggestion'
       }
@@ -308,11 +308,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Vinicius Guimarães',
     user: 'viniciusguimaraes',
-    photo: '/img/vinicius.jpg',
+    photo: 'img/vinicius.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-14.jpg',
+        image: 'img/problem-14.jpg',
         likes: '35',
         type: 'insta'
       }
@@ -321,7 +321,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 14',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-14.jpg',
+        image: 'img/suggestion-14.jpg',
         likes: '33',
         type: 'suggestion'
       }
@@ -331,11 +331,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Leandro Guedes',
     user: 'leandroguedes',
-    photo: '/img/leandro.jpg',
+    photo: 'img/leandro.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-15.jpg',
+        image: 'img/problem-15.jpg',
         likes: '40',
         type: 'fb'
       }
@@ -344,7 +344,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 15',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-15.jpg',
+        image: 'img/suggestion-15.jpg',
         likes: '22',
         type: 'suggestion'
       }
@@ -354,11 +354,11 @@ MongoClient.connect( url, function( err, db ) {
   user.insert({
     nome: 'Gustavo Igansi',
     user: 'gustavoigansi',
-    photo: '/img/gustavo.jpg',
+    photo: 'img/gustavo.jpg',
     problems: [
       {
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/problem-16.jpg',
+        image: 'img/problem-16.jpg',
         likes: '44',
         type: 'fb'
       }
@@ -367,7 +367,7 @@ MongoClient.connect( url, function( err, db ) {
       {
         title: 'Sugestão 16',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius non odio aliquid iure tempore doloremque, quibusdam soluta nemo molestiae sunt.',
-        image: '/img/suggestion-16.jpg',
+        image: 'img/suggestion-16.jpg',
         likes: '27',
         type: 'suggestion'
       }
