@@ -612,6 +612,23 @@ footer {
     margin-left:2px;
 }
 
+/* MAP */
+
+#map {
+    height: 270px;
+    width: 100%;
+}
+
+#wrapperMap {
+    width: 100%;
+}
+
+.mapContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /*USERS*/
 
 .userInfo{
