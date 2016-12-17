@@ -1,0 +1,107 @@
+<!-- New Complaint Modal -->
+    <div class="modal fade" id="modalReclamacao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="/problemas" method="post" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Nova Reclamação</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="description">Descrição:</label>
+                            <input type="text" name="description" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                            <div class="container">
+                                <div class="row">
+                                    <label for="image" class="title">Imagem:</label>
+                                    <div class="col-md-12">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <span class="image-preview-input-title">Browse</span>
+                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="name"/> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3804.2079238637243!2d-51.624552085086!3d-29.965669305948133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ee860010ec1ea1e!2sInstituto+Federal+de+Educa%C3%A7%C3%A3o%2C+Ci%C3%AAncia+e+Tecnologia+Sul-rio-grandense!5e0!3m2!1sen!2sbr!4v1481964758711" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <input type="submit" class="btn btn-primary color-customizable"/ value="Publicar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Improvement Modal -->
+    <div class="modal fade" id="modalMelhoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sugestão de melhoria</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/problemas" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="description">Título:</label>
+                            <input type="text" name="description" class="form-control" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descrição:</label>
+                            <input type="text" name="description" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                            <div class="container">
+                                <div class="row">
+                                    <label for="image" class="title">Imagem:</label>
+                                    <div class="col-md-12">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <span class="image-preview-input-title">Browse</span>
+                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="input-file-preview"/> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3804.2079238637243!2d-51.624552085086!3d-29.965669305948133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ee860010ec1ea1e!2sInstituto+Federal+de+Educa%C3%A7%C3%A3o%2C+Ci%C3%AAncia+e+Tecnologia+Sul-rio-grandense!5e0!3m2!1sen!2sbr!4v1481964758711" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>

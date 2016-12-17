@@ -137,6 +137,7 @@ body {
 
 .socialMediaBanner a div i img{
     height: 25px;
+    margin-bottom: -8px;
 }
 
 .socialMediaBanner a div span{

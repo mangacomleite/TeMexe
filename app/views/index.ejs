@@ -2,114 +2,7 @@
 
 <body>
     <% include partials/nav %>
-
-    <!-- New Complaint Modal -->
-    <div class="modal fade" id="modalReclamacao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form action="/problemas" method="post" enctype="multipart/form-data">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Nova Reclamação</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="description">Descrição:</label>
-                            <input type="text" name="description" class="form-control" id="description">
-                        </div>
-                        <div class="form-group">
-                            <div class="container">
-                                <div class="row">
-                                    <label for="image" class="title">Imagem:</label>
-                                    <div class="col-md-12">
-                                        <!-- image-preview-filename input [CUT FROM HERE]-->
-                                        <div class="input-group image-preview">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                            <span class="input-group-btn">
-                                                <!-- image-preview-clear button -->
-                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                    <span class="glyphicon glyphicon-remove"></span> Clear
-                                                </button>
-                                                <!-- image-preview-input -->
-                                                <div class="btn btn-default image-preview-input">
-                                                    <span class="glyphicon glyphicon-folder-open"></span>
-                                                    <span class="image-preview-input-title">Browse</span>
-                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="name"/> <!-- rename it -->
-                                                </div>
-                                            </span>
-                                        </div><!-- /input-group image-preview [TO HERE]-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3804.2079238637243!2d-51.624552085086!3d-29.965669305948133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ee860010ec1ea1e!2sInstituto+Federal+de+Educa%C3%A7%C3%A3o%2C+Ci%C3%AAncia+e+Tecnologia+Sul-rio-grandense!5e0!3m2!1sen!2sbr!4v1481964758711" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                        <input type="submit" class="btn btn-primary color-customizable"/ value="Publicar">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- New Improvement Modal -->
-    <div class="modal fade" id="modalMelhoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Sugestão de melhoria</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="/problemas" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="description">Título:</label>
-                            <input type="text" name="description" class="form-control" id="title">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Descrição:</label>
-                            <input type="text" name="description" class="form-control" id="description">
-                        </div>
-                        <div class="form-group">
-                            <div class="container">
-                                <div class="row">
-                                    <label for="image" class="title">Imagem:</label>
-                                    <div class="col-md-12">
-                                        <!-- image-preview-filename input [CUT FROM HERE]-->
-                                        <div class="input-group image-preview">
-                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                            <span class="input-group-btn">
-                                                <!-- image-preview-clear button -->
-                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                                                    <span class="glyphicon glyphicon-remove"></span> Clear
-                                                </button>
-                                                <!-- image-preview-input -->
-                                                <div class="btn btn-default image-preview-input">
-                                                    <span class="glyphicon glyphicon-folder-open"></span>
-                                                    <span class="image-preview-input-title">Browse</span>
-                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="input-file-preview"/> <!-- rename it -->
-                                                </div>
-                                            </span>
-                                        </div><!-- /input-group image-preview [TO HERE]-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3804.2079238637243!2d-51.624552085086!3d-29.965669305948133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ee860010ec1ea1e!2sInstituto+Federal+de+Educa%C3%A7%C3%A3o%2C+Ci%C3%AAncia+e+Tecnologia+Sul-rio-grandense!5e0!3m2!1sen!2sbr!4v1481964758711" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <% include partials/modais %>
 
     <!-- Full Width Image Header -->
     <header class="header-feed" id="top">
@@ -123,33 +16,7 @@
         </div>
     </header>
 
-    <!-- Navigation Inner -->
-    <nav class="navbar navbarMedia" role="navigation">
-        <div class="container text-center ">
-            <div class="collapse navbar-collapse navbarMediaIn" id="">
-                <ul class="nav navbar-nav centeredNav">
-                    <li class="sliding-middle-out slidingActive">
-                        <a href="" data-social="All">Mostrar Todos</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="" data-social="TeMexe"><img class="teMexeLittleIcon" src="img/miniCone.png" alt="">Te Mexe</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="" data-social="Twitter"><i class="fa fa-twitter-square"></i> Twitter</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="" data-social="Instagram"><i class="fa fa-instagram"></i> Instagram</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="" data-social="Facebook"><i class="fa fa-facebook-square"></i> Facebook</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+    <% include partials/navInner %>
     <!-- Page Content -->
 
     <!-- <h1 class="text-center"><span class="redViz fontCursive">Feed</span>.</h1> -->
@@ -167,6 +34,40 @@
                <!-- General -->
                 <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
                     <div class="userPost">
+
+                        <%
+                            var fb = 0;
+                            var tw = 0;
+                            var it = 0;
+                            var tm = 0;
+                            for ( var i = 0; i < userLogado.problems.length; i++ ) { 
+                                var varName = userLogado.problems[ i ].type;
+
+                                if (varName.localeCompare("fb")==0) {
+                                    fb++;
+                                }else if (varName.localeCompare("tt")==0) {
+                                    tw++;
+                                }else if (varName.localeCompare("insta")==0) {
+                                    it++;
+                                }else {
+                                    tm++;
+                                }
+                            }
+                            for ( var i = 0; i < userLogado.suggestions.length; i++ ) { 
+                                var varName = userLogado.suggestions[ i ].type;
+
+                                if (varName.localeCompare("fb")==0) {
+                                    fb++;
+                                }else if (varName.localeCompare("tt")==0) {
+                                    tw++;
+                                }else if (varName.localeCompare("insta")==0) {
+                                    it++;
+                                }else {
+                                    tm++;
+                                }
+                            }
+                        %>
+
                         <a class="userImgName">
                             <img src="/<%=userLogado.photo%>" class="">
                             <span> <%= userLogado.nome %></span>
@@ -176,25 +77,25 @@
                             <a href="#">
                                 <div>
                                     <i><img src="img/miniCone.png"></i>
-                                    <span>50</span>
+                                    <span><%= tm%></span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-twitter-square"></i>
-                                    <span>5</span>
+                                    <span><%= tw%></span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-instagram"></i>
-                                    <span>11</span>
+                                    <span><%= it%></span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-facebook-square"></i>
-                                    <span>178</span>
+                                    <span><%= fb%></span>
                                 </div>
                             </a>
                         </div>
@@ -208,13 +109,14 @@
                     <!-- Opcoes -->
                     <div class="userPost">
                         <span class="number">
-                            <a href="#" class="fontCursive">3/4</a>
+                            <a class="fontCursive">3/11</a>
                         </span>
                         <a class="userImgName">
-                            <i class="fa fa-search"></i> Filtro
+                            <i class="fa fa-search"></i> Filtros
                         </a>
                         <hr>
                         <div class="stalkingContent">
+                            <h4>Redes Sociais</h4>
                             <!-- Social -->
                             <div class="userStalking">
                                 <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
@@ -235,6 +137,41 @@
                                 <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
                                 <span class="tw">Twitter</span> <i class="fa fa-twitter tw"></i>
                             </div>
+
+                            <h4>Curtidas</h4>
+                            <!-- Social -->
+                            <div class="userStalking">
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                Minhas curtidas
+                            </div>
+                            <div class="userStalking">
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                Curtidas dos amigos
+                            </div>
+
+                            <h4>Cidades</h4>
+                            <!-- Social -->
+                            <div class="userStalking">
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                Charqueadas
+                            </div>
+                            <div class="userStalking">
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                São Jerônimo
+                            </div>
+                            <div class="userStalking">
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                General Câmara
+                            </div>
+                            <div class="userStalking">
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                Triunfo
+                            </div>
+                            <div class="userStalking">
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                Barão do Triunfo
+                            </div>
+
 
                         </div>
                     </div>
