@@ -137,6 +137,7 @@ body {
 
 .socialMediaBanner a div i img{
     height: 25px;
+    margin-bottom: -8px;
 }
 
 .socialMediaBanner a div span{
@@ -1341,5 +1342,11 @@ footer {
     font-size: 20px;
     color: #d87300;
     margin: 15px;
+}
 
+.badge-notify{
+    background:#d35400;
+    position:absolute;
+    top: 5px;
+    right: 8px;
 }
