@@ -24,7 +24,11 @@ module.exports = function(app) {
               return b.likes - a.likes;
             });
 
-            res.render( 'melhorias', { melhorias: foo, userLogado: userLogado } );
+            res.render( 'melhorias', {
+              melhorias: foo,
+              userLogado: userLogado,
+              routeName: 'melhorias'
+            });
           }
           getMelhorias(document, function(){
             console.log('wow');

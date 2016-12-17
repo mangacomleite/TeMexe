@@ -12,7 +12,8 @@ var getAllCards = function( promAndSug, userLogado, res ) {
 
   res.render( 'index', {
     promAndSug: promAndSug,
-    userLogado: userLogado
+    userLogado: userLogado,
+    routeName: 'home'
   });
 };
 
