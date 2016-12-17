@@ -47,10 +47,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left mainNavbar">
-                    <li class="sliding-middle-out slidingActive"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
+                    <li class="sliding-middle-out"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
                     <li class="sliding-middle-out"><a href="profile.html"><i class="fa fa-user"></i> Perfil</a></li>
                     <li class="sliding-middle-out"><a href="curtidas.html"><i class="fa fa-hand-o-up"></i> Curtidas</a></li>
-                    <li class="sliding-middle-out"><a href="dicas.html"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
+                    <li class="sliding-middle-out slidingActive"><a href="dicas.html"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown" id="searchResults">
@@ -225,33 +225,6 @@
         </div>
     </header>
 
-    <!-- Navigation Inner -->
-    <nav class="navbar navbarMedia" role="navigation">
-        <div class="container text-center ">
-            <div class="collapse navbar-collapse navbarMediaIn" id="">
-                <ul class="nav navbar-nav centeredNav">
-                    <li class="sliding-middle-out slidingActive">
-                        <a href="" data-social="All">Show All</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="" data-social="Twitter"><i class="fa fa-twitter-square"></i> Twitter</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="" data-social="Instagram"><i class="fa fa-instagram"></i> Instagram</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="" data-social="Facebook"><i class="fa fa-facebook-square"></i> Facebook</a>
-                    </li>
-                    <li class="sliding-middle-out">
-                        <a href="">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
     <!-- Page Content -->
 
     <!-- <h1 class="text-center"><span class="redViz fontCursive">Feed</span>.</h1> -->
@@ -259,216 +232,151 @@
     <!-- FEED -->
     <div class="containerFeed">
         <div class="container ">
-
-           <div class="col-lg-3 col-md-3 col-sm-12">
-               <!-- General -->
-                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
-                    <div class="userPost">
-                        <a class="userImgName">
-                            <img src="img/paulo.jpg" class="">
-                            <span> Paulo Virote</span>
-                        </a>
-                        <hr>
-                        <div class="socialMediaBanner miniInfoUser">
-                            <a href="#">
-                                <div>
-                                    <i><img src="img/miniCone.png"></i>
-                                    <span>50</span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter-square"></i>
-                                    <span>5</span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-instagram"></i>
-                                    <span>11</span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-facebook-square"></i>
-                                    <span>178</span>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Full List -->
-                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
+            <div class="row">
+                <div class="grid">
                     
-                    <!-- Opcoes -->
-                    <div class="userPost">
-                        <span class="number">
-                            <a href="#" class="fontCursive">3/4</a>
-                        </span>
-                        <a class="userImgName">
-                            <i class="fa fa-search"></i> Filtro
-                        </a>
-                        <hr>
-                        <div class="stalkingContent">
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <span class="tm">teMexe!</span> <img src="img/miniCone.png">
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/sinalVermelho.jpg"></a>
                             </div>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <span class="fb">Facebook</span> <i class="fa fa-facebook fb"></i>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 293,47</h1>
+                                <p>Este é o quanto você paga por avançar no sinal vermelho além de receber 7 pontos na carteira. Não fure!</p>
+                                <hr>
                             </div>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <span class="it">Instagram</span> <i class="fa fa-instagram it"></i>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
                             </div>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                <span class="tw">Twitter</span> <i class="fa fa-twitter tw"></i>
-                            </div>
-                            
                         </div>
                     </div>
-                </div>
-           </div>
 
-            <div class="col-lg-9 col-md-9 col-sm-12">
-                <div class="row">
-                    <div class="grid">
-                        
-                        <!-- teMexe -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><img src="img/miniCone.png"></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> @paulosouzav</span>
-                                </a>
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/contraMao.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 293,47</h1> -->
+                                <p>Ciclista, não pedale na contramão!</p>
                                 <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/buraco.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Que saudade de ter essa vista todos os dias &#128516;</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Concordar"><i class="fa fa-hand-o-up"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 horas atrás</a>
-                                </div>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Instagram -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-instagram ig"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulo.jpg" class="">
-                                    <span> @paulosouzav</span>
-                                </a>
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/maoEsticada.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 293,47</h1> -->
+                                <p>Estique o braço com as mãos abertas manifestando a intenção de atravessar.</p>
                                 <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/galeria/1.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Que saudade de ter essa vista todos os dias &#128516;</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 horas atrás</a>
-                                </div>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Twitter -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataTwitter">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-twitter tw"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulotw.jpeg" class="">
-                                    <span> @pauloovs</span>
-                                </a>
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/luzFreio.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 293,47</h1> -->
+                                <p>Dê pequenos toques de aviso no freio para se comunicar com o condutor que vem atrás!</p>
                                 <hr>
-                                <div class="postContent">
-                                    <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-                                    
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 horas atrás</a>
-                                </div>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Facebook -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataFacebook">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-facebook fb"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulofb.jpg" class="">
-                                    <span> @paulo.vdesouza</span>
-                                </a>
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/acostamento.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 880,41</h1>
+                                <p>Este é o quanto você paga por dirigir no acostamento além de receber 7 pontos na carteira!</p>
                                 <hr>
-                                <div class="mainPicture">
-                                    <a><img src="img/postFb.jpg"></a>
-                                </div>
-                                <div class="postContent">
-                                    <p>Hoje nossa comunidade chora. É com um enorme aperto no peito que eu venho deixar meus sentimentos à família de um dos melhores professores e também um grande amigo que eu tive a oportunidade e o prazer de trabalhar junto... <a href="#">See More</a></p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3.5 horas atrás</a>
-                                </div>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Twitter -->
-                        <div class="col-lg-4 col-md-4 col-sm-6 grid-item dataTwitter">
-                            <div class="userPost">
-                                <span class="socialInfo">
-                                    <a href="#"><i class="fa fa-twitter tw"></i></a>
-                                </span>
-                                <a class="userImgName">
-                                    <img src="img/paulotw.jpeg" class="">
-                                    <span> @pauloovs</span>
-                                </a>
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/olheLados.png"></a>
+                            </div>
+                            <div class="postContent">
+                                <!-- <h1 class="tm">R$ 880,41</h1> -->
+                                <p>Tenha visibilidade, olhe para os dois lados.</p>
                                 <hr>
-                                <div class="postContent">
-                                    <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                    <hr>
-                                </div>
-                                <div class="postData fontCursive">
-                                    <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-                                    
-                                    <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 horas atrás</a>
-                                </div>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
                             </div>
                         </div>
-                        <!-- END -->
+                    </div>
+                    
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/velocidade.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 880,41</h1>
+                                <p>Este é o quanto você paga por dirigir com excesso de velocidade (50%) além de receber 7 pontos na carteira!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
+                            </div>
+                        </div>
+                    </div>
 
-                    </div> <!-- /grid -->
-                </div> <!-- /row -->
-                <div class="row text-center loadMore">
-                    <button class="btn btn-banner btn2 redViz fontCursive">View More Posts</button>
-                </div>
+                    <!-- Dica -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
+                        <div class="userPost">
+                            <div class="mainPicture">
+                                <a><img src="img/dicas/faixaPedestre.jpg"></a>
+                            </div>
+                            <div class="postContent">
+                                <h1 class="tm">R$ 130,16</h1>
+                                <p>Este é o quanto você paga por parar na faixa de semestre além de receber 4 pontos na carteira!</p>
+                                <hr>
+                            </div>
+                            <div class="postData fontCursive">
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 32</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div> <!-- /grid -->
+            </div> <!-- /row -->
+            <div class="row text-center">
+                <button class="btn btn-banner btn2 redViz fontCursive">Mais Dicas</button>
             </div>
         </div> <!-- /container -->
     </div><!-- /containerFeed -->

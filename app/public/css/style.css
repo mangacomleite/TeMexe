@@ -665,12 +665,14 @@ footer {
     background-color: #ff8800;
     border-color: #d35400;
     text-shadow:none;
+    color: #fff;
 }
 
 .dropdown-acoes:hover, .dropdown-acoes:active{
     background-color: #d35400 !important;
     border-color: #d35400;
     transition: all ease-in-out .2s;
+    color: #fff;
 }
 
 .sliding-middle-out {
