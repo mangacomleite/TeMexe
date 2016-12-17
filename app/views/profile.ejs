@@ -146,7 +146,7 @@
                                     <%}%>
                                 </a>
                             </span>
-                            <a class="userImgName">
+                            <a class="userImgName" href="/user/<%= user.user %>">
                                 <img src="/<%= user.photo %>" class="">
                                 <span> @<%= user.user %></span>
                             </a>
@@ -155,6 +155,9 @@
                                 <a><img src="/<%= user.problemsAndSuggestions[ i ].image %>"></a>
                             </div>
                             <div class="postContent">
+                                <%if (user.problemsAndSuggestions[i].type == 'suggestion') {%>
+                                    <h4><%= user.problemsAndSuggestions[i].title %></h4>
+                                <%}%>
                                 <p><%= user.problemsAndSuggestions[ i ].description %></p>
                                 <hr>
                             </div>

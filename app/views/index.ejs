@@ -226,7 +226,7 @@
                                             <% } %>
                                         </a>
                                     </span>
-                                    <a class="userImgName">
+                                    <a class="userImgName" href="/user/<%= promAndSug[i].user.user %>">
                                         <img src="/<%= promAndSug[i].user.photo%>" class="">
                                         <span> @<%= promAndSug[i].user.user%></span>
                                     </a>
@@ -235,6 +235,10 @@
                                         <a><img src="/<%= promAndSug[i].image %>"></a>
                                     </div>
                                     <div class="postContent">
+                                        <%if (promAndSug[i].type == 'suggestion') {%>
+                                            <h4><%= promAndSug[i].title %></h4>
+                                        <%}%>
+                                        
                                         <p> <%= promAndSug[i].description %> </p>
                                         <hr>
                                     </div>

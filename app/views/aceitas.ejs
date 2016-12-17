@@ -30,160 +30,12 @@
     <div class="containerFeed">
         <div class="container ">
 
-           <div class="col-lg-3 col-md-3 col-sm-12">
-               <!-- General -->
-                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
-                    <div class="userPost">
-
-                        <%
-                            var fb = 0;
-                            var tw = 0;
-                            var it = 0;
-                            var tm = 0;
-                            for ( var i = 0; i < userLogado.problems.length; i++ ) {
-                                var varName = userLogado.problems[ i ].type;
-
-                                if (varName.localeCompare("fb")==0) {
-                                    fb++;
-                                }else if (varName.localeCompare("tt")==0) {
-                                    tw++;
-                                }else if (varName.localeCompare("insta")==0) {
-                                    it++;
-                                }else {
-                                    tm++;
-                                }
-                            }
-                            for ( var i = 0; i < userLogado.suggestions.length; i++ ) {
-                                var varName = userLogado.suggestions[ i ].type;
-
-                                if (varName.localeCompare("fb")==0) {
-                                    fb++;
-                                }else if (varName.localeCompare("tt")==0) {
-                                    tw++;
-                                }else if (varName.localeCompare("insta")==0) {
-                                    it++;
-                                }else {
-                                    tm++;
-                                }
-                            }
-                        %>
-
-                        <a class="userImgName">
-                            <img src="/<%=userLogado.photo%>" class="">
-                            <span> <%= userLogado.nome %></span>
-                        </a>
-                        <hr>
-                        <div class="socialMediaBanner miniInfoUser">
-                            <a href="#">
-                                <div>
-                                    <i><img src="img/miniCone.png"></i>
-                                    <span><%= tm%></span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter-square"></i>
-                                    <span><%= tw%></span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-instagram"></i>
-                                    <span><%= it%></span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-facebook-square"></i>
-                                    <span><%= fb%></span>
-                                </div>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Full List -->
-                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
-
-                    <!-- Opcoes -->
-                    <div class="userPost">
-                        <span class="number">
-                            <a class="fontCursive">3/11</a>
-                        </span>
-                        <a class="userImgName">
-                            <i class="fa fa-search"></i> Filtros
-                        </a>
-                        <hr>
-                        <div class="stalkingContent">
-                            <h4>Redes Sociais</h4>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <span class="tm">teMexe!</span> <img src="img/miniCone.png">
-                            </div>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <span class="fb">Facebook</span> <i class="fa fa-facebook fb"></i>
-                            </div>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
-                                <span class="it">Instagram</span> <i class="fa fa-instagram it"></i>
-                            </div>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                <span class="tw">Twitter</span> <i class="fa fa-twitter tw"></i>
-                            </div>
-
-                            <h4>Curtidas</h4>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                Minhas curtidas
-                            </div>
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                Curtidas dos amigos
-                            </div>
-
-                            <h4>Cidades</h4>
-                            <!-- Social -->
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                Charqueadas
-                            </div>
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                São Jerônimo
-                            </div>
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                General Câmara
-                            </div>
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                Triunfo
-                            </div>
-                            <div class="userStalking">
-                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
-                                Barão do Triunfo
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-           </div>
-
-            <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="row">
                     <div class="grid">
 
                         <!-- teMexe -->
-                        <% for ( var i = 0; i < suggestions.length; i++ ) { %>
+                        <% for ( var i = 0; i < suggestions.length-4; i++ ) { %>
                             <%
                                 if (suggestions[i].type == 'fb') {
                                     var redeSocial = 'dataFacebook';
@@ -207,16 +59,12 @@
                                     var gridSizer = '';
                                 }
                             %>
-                            <div class="col-lg-4 col-md-4 col-sm-6 grid-item <%= gridSizer %> <%= redeSocial %>">
+                            <div class="col-lg-3 col-md-4 col-sm-6 grid-item <%= gridSizer %> <%= redeSocial %>">
 
-                                <%if (i%4!=0) {%>
-                                    <div class="userPost">
-                                <%} else{%>
-                                    <div class="userPost sugestAceito">
-                                        <div class="checkAceito">
-                                            <i class="fa fa-check"></i>
-                                        </div>
-                                <%}%>
+                                <div class="userPost sugestAceito">
+                                    <div class="checkAceito">
+                                        <i class="fa fa-check"></i>
+                                    </div>
                                     <span class="socialInfo">
                                         <a href="#">
                                             <% if( tag !== 'teMexe') { %>
@@ -226,7 +74,7 @@
                                             <% } %>
                                         </a>
                                     </span>
-                                    <a class="userImgName">
+                                    <a class="userImgName" href="/user/<%= suggestions[i].user.user %>">
                                         <img src="/<%= suggestions[i].user.photo%>" class="">
                                         <span> @<%= suggestions[i].user.user%></span>
                                     </a>
@@ -235,6 +83,7 @@
                                         <a><img src="/<%= suggestions[i].image %>"></a>
                                     </div>
                                     <div class="postContent">
+                                        <h4><%= suggestions[i].title %></h4>
                                         <p> <%= suggestions[i].description %> </p>
                                         <hr>
                                     </div>
