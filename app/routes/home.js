@@ -1,10 +1,12 @@
 var MongoClient = require( 'mongodb' ).MongoClient;
 var assert = require( 'assert' );
 
-var getAllCards = function( problems, suggestions, res ) {
-  var all = problems.concat( suggestions );
+var getAllCards = function( promAndSug, userLogado, res ) {
 
-  res.render( 'index', { promAndSug: all } );
+  res.render( 'index', {
+    promAndSug: promAndSug,
+    userLogado: userLogado
+  });
 };
 
 module.exports = function(app) {
@@ -12,25 +14,34 @@ module.exports = function(app) {
     MongoClient.connect( 'mongodb://localhost:27017/mangaComLeite', function( err, db ) {
       if( err ) return console.dir( err );
 
-      var user = db.collection( 'user' );
 
-      var problems = [];
-      var suggestions = [];
 
-      user.find().each( function( err, doc ) {
 
-        if ( doc ) {
-          problems    = problems.concat( doc.problems );
-          suggestions = suggestions.concat( doc.suggestions );
-        }
+      db.collection( 'user' ).findOne({ user: 'milenevlacerda' }, function( err, userLogado ) {
 
-        if ( !doc ) {
-          getAllCards( problems, suggestions, res );
-        }
+        var problems = [];
+        var suggestions = [];
+        db.collection( 'user' ).find().each( function( err, doc ) {
+          console.log( doc );
 
+          if ( doc ) {
+            for ( var i = 0; i < doc.problems.length; i++ ) {
+              doc.problems[ i ].user    = doc;
+              doc.suggestions[ i ].user = doc;
+
+              problems.push( doc.problems[ i ] );
+              suggestions.push( doc.suggestions[ i ] );
+            }
+          }
+
+          if ( !doc ) {
+            var promAndSug = problems.concat( suggestions );
+            getAllCards( promAndSug, userLogado, res );
+            db.close();
+          }
+
+        });
       });
-
-      db.close();
     });
 
   });
