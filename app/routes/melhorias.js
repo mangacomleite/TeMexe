@@ -14,21 +14,23 @@ module.exports = function(app) {
 
 
     MongoClient.connect( 'mongodb://localhost:27017/mangaComLeite', function( err, db ) {
-      db.collection( 'user' ).find().each(function(err, document){
+      db.collection( 'user' ).findOne({ user: 'milenevlacerda' }, function( err, userLogado ) {
+        db.collection( 'user' ).find().each(function(err, document){
 
-        if(!document) {
-          foo.sort(function(a,b){
-            // Turn your strings into dates, and then subtract them
-            // to get a value that is either negative, positive, or zero.
-            return b.likes - a.likes;
+          if(!document) {
+            foo.sort(function(a,b){
+              // Turn your strings into dates, and then subtract them
+              // to get a value that is either negative, positive, or zero.
+              return b.likes - a.likes;
+            });
+
+            res.render( 'melhorias', { melhorias: foo, userLogado: userLogado } );
+          }
+          getMelhorias(document, function(){
+            console.log('wow');
           });
 
-          res.render( 'melhorias', {melhorias: foo} );
-        }
-        getMelhorias(document, function(){
-          console.log('wow');
         });
-
       });
     });
 

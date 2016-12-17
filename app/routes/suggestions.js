@@ -6,10 +6,6 @@ var assert              = require( 'assert' );
 
 module.exports = function(app) {
 
-  app.get( '/sugestoes', function( request, response ) {
-    response.render( 'suggestions/form' );
-  });
-
   app.post( '/sugestoes', multipartMiddleware, function( request, response ) {
 
     var suggestion = request.body;
