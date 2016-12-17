@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>teMexe!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/logoNew.png">
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top topnav menuTop" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav fontCursive sizeCursive" href="index.html"><img src="img/logoNew.png" class="logoMenu"> te<span class="redStk">Mexe</span>!</a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left mainNavbar">
+                    <li class="sliding-middle-out"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
+                    <li class="sliding-middle-out slidingActive"><a href="curtidas.html"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
+                    <li class="sliding-middle-out"><a href="dicas.html"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="sliding-middle-out"><a href=""><i class="fa fa-bell-o"></i></a></li>
+                    <li class="dropdown" id="searchResults">
+                        <!-- <a href=""><i class="fa fa-search"></i></a> -->
+
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="input-group input-search-top">
+                                <input type="text" class="form-control" placeholder="Search..." id="searchInput" autocomplete="off">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </form>
+                        <ul class="dropdown-menu dropdownResults">
+                            <div class="arrow-up"></div>
+                            <div class="loading text-center">
+                                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                            </div>
+                            <li class="divider"></li>
+                            <li><a href="#">Ver Todos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button" class="btn new-complaint btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            <span>Reclamação</span>
+                        </button>
+                    </li>
+                    <li class="dropdown fontCursive">
+                        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a> -->
+                        <a href="" class="dropdown-toggle dropdownToggleUser" data-toggle="dropdown"><img class="img-circle userPicMenu" src="img/paulo.jpg"></a>
+
+                        <ul id="login-dp" class="dropdown-menu dropdownUser">
+                            <div class="arrow-up"></div>
+                            <li><a href="#"><i class="fa fa-users"></i> My Accounts</a></li>
+                            <li><a href="#"><i class="fa fa-user-plus"></i> Add Account</a></li>
+                            <li><a href="#"><i class="fa fa-heart-o"></i> Following</a></li>
+                            <li><a href="#"><i class="fa fa-star"></i> Followers</a></li>
+
+                            <li class="divider"></li>
+
+                            <li><a href="#" class=""><i class="fa fa-sign-out"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- New Complaint Modal -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Nova Reclamação</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="/problemas" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="description">Descrição:</label>
+                            <input type="text" name="description" class="form-control" id="description">
+                        </div>
+                        <div class="form-group">
+                            <div class="container">
+                                <div class="row">
+                                    <label for="image" class="title">Imagem:</label>
+                                    <div class="col-md-12">
+                                        <!-- image-preview-filename input [CUT FROM HERE]-->
+                                        <div class="input-group image-preview">
+                                            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <span class="input-group-btn">
+                                                <!-- image-preview-clear button -->
+                                                <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                    <span class="glyphicon glyphicon-remove"></span> Clear
+                                                </button>
+                                                <!-- image-preview-input -->
+                                                <div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <span class="image-preview-input-title">Browse</span>
+                                                    <input type="file" accept="image/png, image/jpeg, image/gif" id="image" name="input-file-preview"/> <!-- rename it -->
+                                                </div>
+                                            </span>
+                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Width Image Header -->
+    <header class="header-feed" id="top">
+        <div class="bannerFeed">
+            <div class="container">
+                <h1 class="fontCursive">
+                    <img class="picview-image img-circle img-responsive" src="img/logoNew.png">
+                    te<span class="redStk">Mexe</span>!
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Inner -->
+    <nav class="navbar navbarMedia" role="navigation">
+        <div class="container text-center ">
+            <div class="collapse navbar-collapse navbarMediaIn" id="">
+                <ul class="nav navbar-nav centeredNav">
+                    <li class="sliding-middle-out slidingActive">
+                        <a href="" data-social="All">Mostrar Todos</a>
+                    </li>
+                    <li class="sliding-middle-out">
+                        <a href="" data-social="Twitter"><i class="fa fa-twitter-square"></i> Twitter</a>
+                    </li>
+                    <li class="sliding-middle-out">
+                        <a href="" data-social="Instagram"><i class="fa fa-instagram"></i> Instagram</a>
+                    </li>
+                    <li class="sliding-middle-out">
+                        <a href="" data-social="Facebook"><i class="fa fa-facebook-square"></i> Facebook</a>
+                    </li>
+                    <li class="sliding-middle-out">
+                        <a href="">Help</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+
+    <!-- <h1 class="text-center"><span class="redViz fontCursive">Feed</span>.</h1> -->
+
+    <!-- FEED -->
+    <div class="containerFeed">
+        <div class="container ">
+
+           <div class="col-lg-3 col-md-3 col-sm-12">
+               <!-- General -->
+                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
+                    <div class="userPost">
+                        <a class="userImgName">
+                            <img src="img/paulo.jpg" class="">
+                            <span> Paulo Virote</span>
+                        </a>
+                        <hr>
+                        <div class="socialMediaBanner miniInfoUser">
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter-square"></i>
+                                    <span>5</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-instagram"></i>
+                                    <span>287</span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-facebook-square"></i>
+                                    <span>234</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Stalking -->
+                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
+
+                    <!-- Stalking Users -->
+                    <div class="userPost">
+                        <span class="number">
+                            <a href="#" class="fontCursive">2/4</a>
+                        </span>
+                        <a class="userImgName">
+                            <i class="fa fa-star-o"></i> Viewing
+                        </a>
+                        <hr>
+                        <div class="stalkingContent">
+                            <!-- User -->
+                            <div class="userStalking">
+                                <a href="" class="generalInfoStalking">
+                                    <img src="img/paulo.jpg" class="">
+                                    <span> Paulo Virote</span>
+                                </a>
+                                <a href="" class="deleteStalking"><i class="fa fa-times"></i></a>
+                                <i class="fa fa-twitter tw"></i>
+                                <i class="fa fa-facebook fb"></i>
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                            <!-- User -->
+                            <div class="userStalking">
+                                <a href="" class="generalInfoStalking">
+                                    <img src="img/gabriela.jpg" class="">
+                                    <span> Gabriela Gelb</span>
+                                </a>
+                                <a href="" class="deleteStalking"><i class="fa fa-times"></i></a> <!-- &#9587; -->
+                                <i class="fa fa-twitter tw"></i>
+                                <i class="fa fa-facebook fb"></i>
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full List -->
+                <div class="col-lg-12 col-md-12 col-sm-12 grid-item">
+
+                    <!-- Stalking Users -->
+                    <div class="userPost">
+                        <span class="number">
+                            <a href="#" class="fontCursive">4</a>
+                        </span>
+                        <a class="userImgName">
+                            <i class="fa fa-heart-o"></i> Stalking
+                        </a>
+                        <hr>
+                        <div class="stalkingContent">
+                            <!-- User -->
+                            <div class="userStalking">
+                                <a href="" class="generalInfoStalking">
+                                    <img src="img/paulo.jpg" class="">
+                                    <span> Paulo Virote</span>
+                                </a>
+                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
+                                <i class="fa fa-twitter tw"></i>
+                                <i class="fa fa-facebook fb"></i>
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                            <!-- User -->
+                            <div class="userStalking">
+                                <a href="" class="generalInfoStalking">
+                                    <img src="img/gabriela.jpg" class="">
+                                    <span> Gabriela Gelb</span>
+                                </a>
+                                <a href="" class="deleteStalking"><i class="fa fa-check"></i></a>
+                                <i class="fa fa-twitter tw"></i>
+                                <i class="fa fa-facebook fb"></i>
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                            <!-- User -->
+                            <div class="userStalking">
+                                <a href="" class="generalInfoStalking">
+                                    <img src="img/cleber.jpg" class="">
+                                    <span> Cleber Quadros</span>
+                                </a>
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                <i class="fa fa-facebook fb"></i>
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                            <!-- User -->
+                            <div class="userStalking">
+                                <a href="" class="generalInfoStalking">
+                                    <img src="img/ivo.jpg" class="">
+                                    <span> Ivo Berbigier</span>
+                                </a>
+                                <a href="" class="deleteStalking"><i class="fa fa-plus"></i></a>
+                                <i class="fa fa-facebook fb"></i>
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="row">
+                    <div class="grid improvement-page">
+
+                        <!-- teMexe -->
+
+                        <ul>
+                            <li data-toggle="modal" data-target="#improvementModal">
+                                <div class="col-md-12 improvement-item">
+                                    <div class="details">
+                                        <span class="position">1º</span>
+                                        <h3 class="title">Título Melhoria</h3>
+                                    </div>
+                                    <div class="voteNumber">
+                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                                        <span class="votes">250</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-toggle="modal" data-target="#improvementModal">
+                                <div class="col-md-12 improvement-item">
+                                    <div class="details">
+                                        <span class="position">2º</span>
+                                        <h3 class="title">Título Melhoria</h3>
+                                    </div>
+                                    <div class="voteNumber">
+                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                                        <span class="votes">100</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-toggle="modal" data-target="#improvementModal">
+                                <div class="col-md-12 improvement-item">
+                                    <div class="details">
+                                        <span class="position">3º</span>
+                                        <h3 class="title">Título Melhoria</h3>
+                                    </div>
+                                    <div class="voteNumber">
+                                        <i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+                                        <span class="votes">90</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- END -->
+
+                    </div> <!-- /grid -->
+
+                    <div class="modal fade" id="improvementModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="votesNumber"><span>250</span> Votos</div>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <div class="image">
+                                        <img src="img/preferencia.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <h4 class="modal-title">Título Melhoria</h4>
+                                    <div class="descricao-melhoria">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, similique corporis consequatur, enim consequuntur, sint illo sed deleniti quam in cum iste at molestiae quod amet architecto quis quos atque maiores modi magni veritatis rem. Esse fuga reprehenderit enim facilis, quam iusto nisi voluptates nemo, porro culpa perspiciatis dicta aut sapiente fugit rerum quae quidem cupiditate temporibus obcaecati deleniti. Nobis minima dolores deleniti architecto reprehenderit pariatur ducimus voluptas, quos iste culpa dolore qui odit itaque illum doloremque blanditiis! Assumenda itaque illo doloremque deleniti ad ratione voluptatibus, inventore dolorem, deserunt possimus tempora quaerat consectetur totam nulla ipsum odio maiores ex pariatur!</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary vote"><span>Votar</span><i class="fa fa-hand-pointer-o" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /row -->
+                <div class="row text-center loadMore">
+                    <button class="btn btn-banner btn2 redViz fontCursive">Ver Mais Postagens</button>
+                </div>
+            </div>
+        </div> <!-- /container -->
+    </div><!-- /containerFeed -->
+
+    <div class="container">
+        <!-- <hr class="picview-divider"> -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; stalkMe 2016. Created by <a href="#">Paulo Virote de Souza</a>.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
