@@ -22,7 +22,11 @@ module.exports = function(app) {
 
       suggestionPath = "uploads/" + Date.now() + '.' + extension;
       var newPath = __dirname + "/../public/" + suggestionPath;
+
       suggestion.image = suggestionPath;
+      suggestion.likes = 0;
+      suggestion.type = 'suggestion';
+      suggestion.date = new Date();
 
       fs.writeFile(newPath, data);
 
@@ -32,7 +36,7 @@ module.exports = function(app) {
         var user = db.collection( 'user' );
 
         user.update(
-          { user: 'victorserpac' },
+          { user: 'milenevlacerda' },
           {
             $push: { suggestions: suggestion }
           },

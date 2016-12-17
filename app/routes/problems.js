@@ -2,9 +2,6 @@ var fs                  = require( 'fs' );
 var multipart           = require('connect-multiparty');
 var multipartMiddleware = multipart();
 var MongoClient         = require( 'mongodb' ).MongoClient;
-var assert              = require( 'assert' );
-
-
 
 module.exports = function(app) {
 
@@ -25,17 +22,19 @@ module.exports = function(app) {
       var newPath = __dirname + "/../public/" + path;
 
       problem.image = path;
+      problem.likes = 0;
+      problem.type  = 'TeMexe';
+      problem.date  = new Date();
 
-      fs.writeFile( newPath );
+      fs.writeFile( newPath, data );
 
-      var url = 'mongodb://localhost:27017/mangaComLeite';
-      MongoClient.connect( url, function( err, db ) {
+      MongoClient.connect( 'mongodb://localhost:27017/mangaComLeite', function( err, db ) {
         if( err ) { return console.dir( err ); }
 
         var user = db.collection( 'user' );
 
         user.update(
-          { user: 'victorserpac' },
+          { user: 'milenevlacerda' },
           {
             $push: { problems: problem }
           },
