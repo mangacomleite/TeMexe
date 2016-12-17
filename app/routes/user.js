@@ -27,10 +27,13 @@ module.exports = function( app ) {
       db.collection( 'user' ).findOne({ user: 'milenevlacerda' }, function( err, userLogado ) {
         user.findOne({ user: username }, function( err, document ) {
           if ( document ) {
-            for ( var i = 0; i < document.problems.length; i++ ) {
+            for ( let i = 0; i < document.problems.length; i++ ) {
               document.problems[ i ].dataFormatada = dataAtualFormatada( document.problems[ i ].date );
+            }
+            for ( let i = 0; i < document.suggestions.length; i++ ) {
               document.suggestions[ i ].dataFormatada = dataAtualFormatada( document.suggestions[ i ].date );
             }
+
             document.problemsAndSuggestions = document.problems.concat( document.suggestions );
           }
 
