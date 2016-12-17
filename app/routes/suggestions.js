@@ -4,35 +4,34 @@ var multipartMiddleware = multipart();
 var MongoClient         = require( 'mongodb' ).MongoClient;
 var assert              = require( 'assert' );
 
-
-
 module.exports = function(app) {
 
-  app.get( '/problemas', function( request, response ) {
-    response.render( 'problems/form' );
+  app.get( '/sugestoes', function( request, response ) {
+    response.render( 'suggestions/form' );
   });
 
-  app.post( '/problemas', multipartMiddleware, function( request, response ) {
+  app.post( '/sugestoes', multipartMiddleware, function( request, response ) {
 
-    var problem = request.body;
+    var suggestion = request.body;
+    let suggestionPath;
 
-    fs.readFile( request.files.name.path, function ( err, data ) {
+    fs.readFile( request.files.image.path, function ( err, data ) {
 
       let extension = 'jpg';
-      if ( request.files.name.type == 'image/png' ) {
+      if ( request.files.image.type == 'image/png' ) {
         extension = 'png';
-      } else if ( request.files.name.type == 'image/jpeg' ) {
+      } else if ( request.files.image.type == 'image/jpeg' ) {
         extension = 'jpg';
       }
 
-      var path = "uploads/" + Date.now() + '.' + extension;
-      var newPath = __dirname + "/../public/" + path;
+      suggestionPath = "uploads/" + Date.now() + '.' + extension;
+      var newPath = __dirname + "/../public/" + suggestionPath;
+      suggestion.image = suggestionPath;
 
-      problem.image = path;
-
-      fs.writeFile( newPath );
+      fs.writeFile(newPath, data);
 
       var url = 'mongodb://localhost:27017/mangaComLeite';
+
       MongoClient.connect( url, function( err, db ) {
         if( err ) { return console.dir( err ); }
 
@@ -41,11 +40,10 @@ module.exports = function(app) {
         user.update(
           { user: 'victorserpac' },
           {
-            $push: { problems: problem }
+            $push: { suggestions: suggestion }
           },
           { w: 1 },
           function( err, result ) {
-            console.log( 'cadastrado' );
             response.redirect( '/' );
           }
         );
