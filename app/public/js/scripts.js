@@ -207,3 +207,50 @@ $(function() {
         reader.readAsDataURL(file);
     });
 });
+
+// Index MAP
+
+function initMap() {
+  // var myLatLng = {lat: -29.9629768, lng: -51.629387};
+  //
+  // var map = new google.maps.Map(document.getElementById('map'), {
+  //   zoom: 15,
+  //   center: myLatLng
+  // });
+  //
+  // var marker = new google.maps.Marker({
+  //   position: myLatLng,
+  //   map: map,
+  //   title: 'Hello World!'
+  // });
+  var locations = [
+      ['Charqueadas', -29.9629768, -51.629387, 23],
+      ['São Jerônimo', -29.962127, -51.7250108, 15],
+      ['Triunfo', -29.9356233, -51.7124176, 21],
+      ['Butiá', -30.1180899, -51.9615457, 63]
+  ];
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: new google.maps.LatLng(-29.9629768, -51.629387),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  var infowindow = new google.maps.InfoWindow();
+
+  var marker, i;
+
+  for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+          };
+      })(marker, i));
+  }
+}
