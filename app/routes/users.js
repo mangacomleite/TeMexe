@@ -7,7 +7,7 @@ module.exports = function( app ) {
     // res.render( 'problems/index' );
     //
 
-    MongoClient.connect( "mongodb://localhost:27017/exampleDb", function( err, db ) {
+    MongoClient.connect( "mongodb://localhost:27017/mangaComLeite", function( err, db ) {
       if(err) { return console.dir(err); }
 
       var users = db.collection( 'users' );
@@ -16,10 +16,13 @@ module.exports = function( app ) {
 
       // console.log( users. );
 
-      users.insert({
-        'nome': 'Teste',
-        'idade': 21
-      });
+      db.user.insert({
+        user: 'victorserpac',
+        nome: 'Victor',
+        idade: 22,
+        problems: [],
+        suggestions: []
+      })
 
     });
 

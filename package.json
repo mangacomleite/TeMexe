@@ -1,9 +1,9 @@
 {
-  "name": "learning-nodejs",
+  "name": "mangaComLeite",
   "version": "1.0.0",
-  "description": "site da casa do código",
-  "main": "index.js",
-  "author": "Victor",
+  "description": "",
+  "main": "app.js",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
