@@ -30,9 +30,7 @@ module.exports = function(app) {
 
       fs.writeFile(newPath, data);
 
-      var url = 'mongodb://localhost:27017/mangaComLeite';
-
-      MongoClient.connect( url, function( err, db ) {
+      MongoClient.connect( 'mongodb://localhost:27017/mangaComLeite', function( err, db ) {
         if( err ) { return console.dir( err ); }
 
         var user = db.collection( 'user' );
