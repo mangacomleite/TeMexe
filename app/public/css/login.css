@@ -25,6 +25,7 @@ body, html {
 .fontCursive{
     font-family: 'Raleway', sans-serif !important;
     font-weight: 100;
+    text-align: center;
 }
 
 .btn {
@@ -114,7 +115,9 @@ body, html {
 
 .btn.btn-signin {
     /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
+    /*background-color: rgb(104, 145, 162);*/
+    /*.btn-tm{*/
+    background-color: #ff8800;
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
     padding: 0px;
     font-weight: 700;
@@ -133,7 +136,8 @@ body, html {
 .btn.btn-signin:hover,
 .btn.btn-signin:active,
 .btn.btn-signin:focus {
-    background-color: rgb(12, 97, 33);
+    /*background-color: rgb(12, 97, 33);*/
+    background-color: #d6731d;
 }
 
 .forgot-password {
