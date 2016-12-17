@@ -58,8 +58,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Sugestão de melhoria</h4>
                 </div>
-                <div class="modal-body">
-                    <form action="/problemas" method="post" enctype="multipart/form-data">
+                <form action="/sugestoes" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
                         <div class="form-group">
                             <label for="description">Título:</label>
                             <input type="text" name="description" class="form-control" id="title">
@@ -93,15 +93,16 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    
+                    </div>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3804.2079238637243!2d-51.624552085086!3d-29.965669305948133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ee860010ec1ea1e!2sInstituto+Federal+de+Educa%C3%A7%C3%A3o%2C+Ci%C3%AAncia+e+Tecnologia+Sul-rio-grandense!5e0!3m2!1sen!2sbr!4v1481964758711" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3804.2079238637243!2d-51.624552085086!3d-29.965669305948133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4ee860010ec1ea1e!2sInstituto+Federal+de+Educa%C3%A7%C3%A3o%2C+Ci%C3%AAncia+e+Tecnologia+Sul-rio-grandense!5e0!3m2!1sen!2sbr!4v1481964758711" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary color-customizable">Publicar</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        <input type="submit" class="btn btn-primary color-customizable">Publicar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
