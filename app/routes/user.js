@@ -38,8 +38,11 @@ module.exports = function( app ) {
           }
 
 
-          res.render('profile', { user: document, userLogado: userLogado } );
-
+          res.render('profile', {
+            user: document,
+            userLogado: userLogado,
+            routeName: 'user'
+          });
         });
       });
     });
