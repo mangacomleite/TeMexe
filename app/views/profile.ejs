@@ -19,12 +19,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="sliding-middle-out"><a href="index.html"><i class="fa fa-heart-o"></i> Feed</a></li>
-                    <li class="sliding-middle-out slidingActive"><a href=""><i class="fa fa-user"></i> Profile</a></li>
-                    <li class="sliding-middle-out"><a href="curtidas.html"><i class="fa fa-hand-o-up"></i> Curtidas</a></li>
+                    <li class="sliding-middle-out"><a href="/"><i class="fa fa-heart-o"></i> Feed</a></li>
+                    <li class="sliding-middle-out"><a href="/melhorias.html"><i class="fa fa-check" aria-hidden="true"></i> Melhorias</a></li>
+                    <li class="sliding-middle-out"><a href="/dicas.html"><i class="fa fa-car"></i> Dicas de Trânsito</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="sliding-middle-out"><a href=""><i class="fa fa-bell-o"></i></a></li>
                     <li class="dropdown" id="searchResults">
                         <!-- <a href=""><i class="fa fa-search"></i></a> -->
 
@@ -75,31 +74,56 @@
 
                 <div class="picview">
                     <div class="col-lg-4 col-md-4 col-sm-12">
-                        <img class="picview-image img-circle img-responsive" src="/img/paulo.jpg">
+                        <img class="picview-image img-circle img-responsive" src="/<%= user.photo %>">
                     </div>
                     <div class="userInfoBannerIn col-lg-8 col-md-8 col-sm-12 fontCursive">
                         <h2 class="shadowedText"><%= user.nome %></h2>
                         <div class="miniInfo">
-                            <a href="#" class="btn btn-banner btn1"><b>324</b> stalkers</a>
-                            <a href="#" class="btn btn-banner btn2 shadowedText"><b>213</b> stalking</a>
+                            <a href="#" class="btn btn-banner btn1"><b><%= user.suggestions.length %></b> Sugestões</a>
+                            <a href="#" class="btn btn-banner btn2 shadowedText"><b><%= user.problems.length %></b> Reclamações</a>
                         </div>
                         <div class="socialMediaBanner shadowedText">
+                            <%
+                                var fb = 0;
+                                var tw = 0;
+                                var it = 0;
+                                var tm = 0;
+                                for ( var i = 0; i < user.problemsAndSuggestions.length; i++ ) { 
+                                    var varName = user.problemsAndSuggestions[ i ].type;
+
+                                    if (varName.localeCompare("fb")==0) {
+                                        fb++;
+                                    }else if (varName.localeCompare("tt")==0) {
+                                        tw++;
+                                    }else if (varName.localeCompare("insta")==0) {
+                                        it++;
+                                    }else {
+                                        tm++;
+                                    }
+                                }
+                            %>
+                            <a href="#">
+                                <div>
+                                    <i><img src="/img/miniCone.png"></i>
+                                    <span><%=tm%></span>
+                                </div>
+                            </a>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-twitter-square"></i>
-                                    <span>5</span>
+                                    <span><%=tw%></span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-instagram"></i>
-                                    <span>287</span>
+                                    <span><%=it%></span>
                                 </div>
                             </a>
                             <a href="#">
                                 <div>
                                     <i class="fa fa-facebook-square"></i>
-                                    <span>234</span>
+                                    <span><%=fb%></span>
                                 </div>
                             </a>
                         </div>
@@ -147,15 +171,71 @@
             <div class="row">
                 <div class="grid">
 
-                    <!-- Instagram -->
-                    <% for ( var i = 0; i < user.problemsAndSuggestions.length; i++ ) { %>
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
+                    <% for ( var i = 0; i < user.problemsAndSuggestions.length; i++ ) { 
+                        var gridSizer = '';
+                        if ( i==0 ) {
+                            gridSizer = 'grid-sizer';
+                        }
+
+                        var social = '';
+                        var dataTag = '';
+                        var varName = user.problemsAndSuggestions[ i ].type;
+                        if (varName.localeCompare("fb")==0) {
+                            social = 'facebook';
+                            dataTag = 'dataFacebook';
+                        }else if (varName.localeCompare("tt")==0) {
+                            social = 'twitter';
+                            dataTag = 'dataTwitter';
+                        }else if (varName.localeCompare("insta")==0) {
+                            social = 'instagram';
+                            dataTag = 'dataInstagram';
+                        }else {
+                            social = 'teMexe.png';
+                            dataTag = 'dataTeMexe';
+                        }
+                    }
+                    %>
+
+                    <!-- POST -->
+                    <% for ( var i = 0; i < user.problemsAndSuggestions.length; i++ ) { 
+
+                        var gridSizer = '';
+                        if ( i==0 ) {
+                            gridSizer = 'grid-sizer';
+                        }else{
+                            gridSizer = '';
+                        }
+
+                        var social = '';
+                        var dataTag = '';
+                        var varName = user.problemsAndSuggestions[ i ].type;
+                        if (varName.localeCompare("fb")==0) {
+                            social = 'facebook';
+                            dataTag = 'dataFacebook';
+                        }else if (varName.localeCompare("tt")==0) {
+                            social = 'twitter';
+                            dataTag = 'dataTwitter';
+                        }else if (varName.localeCompare("insta")==0) {
+                            social = 'instagram';
+                            dataTag = 'dataInstagram';
+                        }else {
+                            social = 'teMexe.png';
+                            dataTag = 'dataTeMexe';
+                        }
+                    %>
+                    <div class="col-lg-3 col-md-4 col-sm-6 <%=gridSizer%> grid-item <%=dataTag%>">
                         <div class="userPost">
                             <span class="socialInfo">
-                                <a href="#"><i class="fa fa-instagram ig"></i></a>
+                                <a href="#">
+                                    <% if(varName.localeCompare("suggestion")==0) {%>
+                                        <img src="/img/miniCone.png">
+                                    <% }else{%>
+                                        <i class="fa fa-<%=social%> ig"></i>
+                                    <%}%>
+                                </a>
                             </span>
                             <a class="userImgName">
-                                <img src="/img/paulo.jpg" class="">
+                                <img src="/<%= user.photo %>" class="">
                                 <span> @<%= user.user %></span>
                             </a>
                             <hr>
@@ -167,294 +247,16 @@
                                 <hr>
                             </div>
                             <div class="postData fontCursive">
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                <a href="#" title="Comment"><i class="fa fa-comment-o"></i> 4</a>
+                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 
+                                    <%= user.problemsAndSuggestions[ i ].likes %>
+                                </a>
                                 <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> <%= user.problemsAndSuggestions[ i ].dataFormatada %></a>
                             </div>
                         </div>
                     </div>
                     <% } %>
 
-                    <%# <!-- Twitter -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataTwitter">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-twitter tw"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulotw.jpeg" class="">
-                                <span> @pauloovs</span>
-                            </a>
-                            <hr>
-                            <div class="postContent">
-                                <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Reply"><i class="fa fa-reply"></i></a>
-                                <a href="#" title="Retweet"><i class="fa fa-retweet"></i> 0</a>
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Facebook -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataFacebook">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-facebook fb"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulofb.jpg" class="">
-                                <span> @paulo.vdesouza</span>
-                            </a>
-                            <hr>
-                            <div class="mainPicture">
-                                <a><img src="/img/postFb.jpg"></a>
-                            </div>
-                            <div class="postContent">
-                                <p>Hoje nossa comunidade chora. É com um enorme aperto no peito que eu venho deixar meus sentimentos à família de um dos melhores professores e também um grande amigo que eu tive a oportunidade e o prazer de trabalhar junto... <a href="#">See More</a></p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                <a href="#" title="Comment"><i class="fa fa-comment-o"></i> 4</a>
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3.5 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Twitter -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataTwitter">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-twitter tw"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulotw.jpeg" class="">
-                                <span> @pauloovs</span>
-                            </a>
-                            <hr>
-                            <div class="postContent">
-                                <p>Eu voto por menos farmácias e mais pokestops em Charqueadas, cadê meu vereador?</p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Reply"><i class="fa fa-reply"></i></a>
-                                <a href="#" title="Retweet"><i class="fa fa-retweet"></i> 3</a>
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 3</a>
-
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 5 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Instagram -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-instagram ig"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulo.jpg" class="">
-                                <span> @paulosouzav</span>
-                            </a>
-                            <hr>
-                            <div class="mainPicture">
-                                <a><img src="/img/galeria/2.jpg"></a>
-                            </div>
-                            <div class="postContent">
-                                <p>Fotografar pra mim é compartilhar uma parte da alma. Taking pictures for me is to share a piece of my soul. ❤️📷 <a href="#">#miamioh</a></p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                <a href="#" title="Comment"><i class="fa fa-comment-o"></i> 4</a>
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Instagram -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-instagram ig"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulo.jpg" class="">
-                                <span> @paulosouzav</span>
-                            </a>
-                            <hr>
-                            <div class="mainPicture">
-                                <a><img src="/img/galeria/1.jpg"></a>
-                            </div>
-                            <div class="postContent">
-                                <p>Que saudade de ter essa vista todos os dias &#128516;</p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                <a href="#" title="Comment"><i class="fa fa-comment-o"></i> 4</a>
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Twitter -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataTwitter">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-twitter tw"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulotw.jpeg" class="">
-                                <span> @pauloovs</span>
-                            </a>
-                            <hr>
-                            <div class="postContent">
-                                <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Reply"><i class="fa fa-reply"></i></a>
-                                <a href="#" title="Retweet"><i class="fa fa-retweet"></i> 0</a>
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Facebook -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataFacebook">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-facebook fb"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulofb.jpg" class="">
-                                <span> @paulo.vdesouza</span>
-                            </a>
-                            <hr>
-                            <div class="mainPicture">
-                                <a><img src="/img/postFb.jpg"></a>
-                            </div>
-                            <div class="postContent">
-                                <p>Hoje nossa comunidade chora. É com um enorme aperto no peito que eu venho deixar meus sentimentos à família de um dos melhores professores e também um grande amigo que eu tive a oportunidade e o prazer de trabalhar junto... <a href="#">See More</a></p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                <a href="#" title="Comment"><i class="fa fa-comment-o"></i> 4</a>
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3.5 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Twitter -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataTwitter">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-twitter tw"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulotw.jpeg" class="">
-                                <span> @pauloovs</span>
-                            </a>
-                            <hr>
-                            <div class="postContent">
-                                <p>Eu voto por menos farmácias e mais pokestops em Charqueadas, cadê meu vereador?</p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Reply"><i class="fa fa-reply"></i></a>
-                                <a href="#" title="Retweet"><i class="fa fa-retweet"></i> 3</a>
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 3</a>
-
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 5 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Instagram -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataInstagram">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-instagram ig"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulo.jpg" class="">
-                                <span> @paulosouzav</span>
-                            </a>
-                            <hr>
-                            <div class="mainPicture">
-                                <a><img src="/img/galeria/2.jpg"></a>
-                            </div>
-                            <div class="postContent">
-                                <p>Fotografar pra mim é compartilhar uma parte da alma. Taking pictures for me is to share a piece of my soul. ❤️📷 <a href="#">#miamioh</a></p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                <a href="#" title="Comment"><i class="fa fa-comment-o"></i> 4</a>
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Instagram -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item grid-sizer dataInstagram">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-instagram ig"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulo.jpg" class="">
-                                <span> @paulosouzav</span>
-                            </a>
-                            <hr>
-                            <div class="mainPicture">
-                                <a><img src="/img/galeria/1.jpg"></a>
-                            </div>
-                            <div class="postContent">
-                                <p>Que saudade de ter essa vista todos os dias &#128516;</p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 97</a>
-                                <a href="#" title="Comment"><i class="fa fa-comment-o"></i> 4</a>
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 2 hours ago</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Twitter -->
-                    <div class="col-lg-3 col-md-4 col-sm-6 grid-item dataTwitter">
-                        <div class="userPost">
-                            <span class="socialInfo">
-                                <a href="#"><i class="fa fa-twitter tw"></i></a>
-                            </span>
-                            <a class="userImgName">
-                                <img src="/img/paulotw.jpeg" class="">
-                                <span> @pauloovs</span>
-                            </a>
-                            <hr>
-                            <div class="postContent">
-                                <p>Alguém que esteja no comício aqui na vila Piratini pode pedir pra encerrarem? De mentiras já bastam as da vida hahahahaha</p>
-                                <hr>
-                            </div>
-                            <div class="postData fontCursive">
-                                <a href="#" title="Reply"><i class="fa fa-reply"></i></a>
-                                <a href="#" title="Retweet"><i class="fa fa-retweet"></i> 0</a>
-                                <a href="#" title="Like"><i class="fa fa-heart-o"></i> 4</a>
-
-                                <a href="#" title="Time posted" class="pull-right timeInfo"><i class="fa fa-clock"></i> 3 hours ago</a>
-                            </div>
-                        </div>
-                    </div>%>
+                    
 
                 </div> <!-- /grid -->
             </div> <!-- /row -->
