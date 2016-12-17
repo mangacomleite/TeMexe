@@ -11,12 +11,12 @@ module.exports = function(app) {
     var suggestion = request.body;
     let suggestionPath;
 
-    fs.readFile( request.files.image.path, function ( err, data ) {
+    fs.readFile( request.files['input-file-preview'].path, function ( err, data ) {
 
       let extension = 'jpg';
-      if ( request.files.image.type == 'image/png' ) {
+      if ( request.files['input-file-preview'].type == 'image/png' ) {
         extension = 'png';
-      } else if ( request.files.image.type == 'image/jpeg' ) {
+      } else if ( request.files['input-file-preview'].type == 'image/jpeg' ) {
         extension = 'jpg';
       }
 
